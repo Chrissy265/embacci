@@ -1,7 +1,7 @@
 // Central image registry.
 //
 // All app images live in src/assets so Vite fingerprints them at build time
-// (e.g. team-beena-v2.png -> /assets/team-beena-v2.a1b2c3.png). Content changes
+// (e.g. team-beena-v2.jpg -> /assets/team-beena-v2.a1b2c3.jpg). Content changes
 // therefore get a NEW url automatically — no manual renames, no stale prod cache.
 //
 // `import.meta.glob({ eager: true })` imports every file once and gives us the

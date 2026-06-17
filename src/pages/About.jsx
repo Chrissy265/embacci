@@ -272,7 +272,7 @@ export default function About() {
                 <div style={{ position: 'relative', width: 'clamp(150px,42vw,236px)', aspectRatio: '1/1', marginBottom: 30 }}>
                   <div style={{ position: 'absolute', inset: -12, border: '1px solid rgba(199,122,72,.4)', borderRadius: '50%' }} />
                   <div style={{ width: '100%', height: '100%', borderRadius: '50%', overflow: 'hidden', background: 'var(--panel-3)' }}>
-                    <img src={asset(`${m.img}.png`)} alt={m.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: m.pos || undefined, display: 'block' }} />
+                    <img src={asset(`${m.img}.jpg`)} alt={m.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: m.pos || undefined, display: 'block' }} />
                   </div>
                 </div>
                 <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 24, lineHeight: 1.1, margin: '0 0 8px', color: 'var(--text-bright)' }}>{m.name}</h3>
