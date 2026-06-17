@@ -459,7 +459,7 @@ export default function Home() {
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 26px', justifyContent: 'center', marginTop: 30, fontSize: '12.5px', letterSpacing: '.06em', color: 'var(--muted-4)' }}>
               <span>or reach our concierge directly</span>
-              <a href="https://wa.me/254707482502" className="link-accent" style={{ color: 'var(--accent)', textDecoration: 'none' }}>WhatsApp +254 707 482 502</a>
+              <a href="https://wa.me/251900057336" className="link-accent" style={{ color: 'var(--accent)', textDecoration: 'none' }}>WhatsApp +251 900 057 336</a>
               <a href="tel:+18888206671" className="link-accent" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Call 888-820-6671</a>
             </div>
           </Reveal>
@@ -504,9 +504,9 @@ export default function Home() {
                   <span style={{ width: 8, height: 8, background: 'var(--accent)', transform: 'rotate(45deg)', flex: 'none' }} />
                   <span><span style={{ display: 'block', fontSize: '10.5px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--muted-6)', marginBottom: 5 }}>U.S. Line</span><span style={{ fontSize: 17, color: 'var(--text-bright)' }}>888-820-6671</span></span>
                 </a>
-                <a href="https://wa.me/254707482502" style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '20px 0', borderBottom: '1px solid rgba(244,238,227,.1)', textDecoration: 'none' }}>
+                <a href="https://wa.me/251900057336" style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '20px 0', borderBottom: '1px solid rgba(244,238,227,.1)', textDecoration: 'none' }}>
                   <span style={{ width: 8, height: 8, background: 'var(--accent)', transform: 'rotate(45deg)', flex: 'none' }} />
-                  <span><span style={{ display: 'block', fontSize: '10.5px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--muted-6)', marginBottom: 5 }}>East Africa / WhatsApp</span><span style={{ fontSize: 17, color: 'var(--text-bright)' }}>+254 707 482 502</span></span>
+                  <span><span style={{ display: 'block', fontSize: '10.5px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--muted-6)', marginBottom: 5 }}>East Africa / WhatsApp</span><span style={{ fontSize: 17, color: 'var(--text-bright)' }}>+251 900 057 336</span></span>
                 </a>
                 <a href="https://www.instagram.com/embacci_international" style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '20px 0', borderBottom: '1px solid rgba(244,238,227,.1)', textDecoration: 'none' }}>
                   <span style={{ width: 8, height: 8, background: 'var(--accent)', transform: 'rotate(45deg)', flex: 'none' }} />
