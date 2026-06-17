@@ -26,7 +26,7 @@ const TEAM = [
     delay: '.08s', pos: null,
   },
   {
-    img: 'team-beena', name: 'Beena Pandya', title: 'Kenya Makeup Director',
+    img: 'team-beena-v2', name: 'Beena Pandya', title: 'Kenya Makeup Director',
     desc: "Heading EMBACCI's makeup artistry in Kenya, Beena blends technical mastery with an eye for timeless glamour, delivering refined, camera-ready beauty for every occasion.",
     delay: '.16s', pos: '50% 50%',
   },
