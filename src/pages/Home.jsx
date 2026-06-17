@@ -8,6 +8,7 @@ import Marquee from '../components/Marquee.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
 import { bookLinkProps } from '../config/booking.js'
+import { asset } from '../assets/index.js'
 
 // EmailJS config — set these in a .env file (see .env.example). Notification
 // emails for the "Let's Talk" form are sent to both EMBACCI inboxes below.
@@ -36,7 +37,7 @@ const SERVICES = [
   {
     to: '/makeup-on-demand',
     num: '01',
-    img: '/assets/media/setting-spray.jpg',
+    img: 'media/setting-spray.jpg',
     pos: '50% 35%',
     title: 'Concierge Makeup Services',
     body: 'Available on-demand for hotels, weddings, corporate events, and high-profile occasions. Our artists bring elegance and expertise directly to your door.',
@@ -46,7 +47,7 @@ const SERVICES = [
   {
     to: '/skincare',
     num: '02',
-    img: '/assets/media/product-salon.jpg',
+    img: 'media/product-salon.jpg',
     pos: '50% 22%',
     title: 'Organic Skincare from Ethiopia',
     body: 'Featuring our exclusive Gob Tree collection, an ancient botanical treasure known for its healing, hydrating, and rejuvenating properties. Sourced ethically and crafted for radiant skin.',
@@ -56,7 +57,7 @@ const SERVICES = [
   {
     to: '/makeup-on-demand',
     num: '03',
-    img: '/assets/media/duo-salon.jpg',
+    img: 'media/duo-salon.jpg',
     pos: '50% 18%',
     title: 'Styling & Beauty Enhancements',
     body: 'From skincare consultations to personalized styling, our concierge offerings are tailored to elevate your natural beauty with grace and precision.',
@@ -73,13 +74,13 @@ const FAQS = [
 ]
 
 const GALLERY = [
-  { src: '/assets/founders.jpg', cap: 'EMBACCI International · Brand Moments', span: 'big', label: 'Brand Moments', bg: 'var(--panel-3)' },
-  { src: '/assets/airbrush.jpg', cap: 'Airbrush Technology · Product', bg: '#EFE9DF' },
-  { src: '/assets/media/bts-bridal.jpg', cap: 'Bridal Glam · Addis Ababa', label: 'Bridal Glam' },
-  { src: '/assets/media/gala-couple.jpg', cap: 'Editorial · Nairobi', label: 'Editorial' },
-  { src: '/assets/media/office.jpg', cap: 'Hotel Concierge · Five-Star', span: 'wide', label: 'Hotel Concierge' },
-  { src: '/assets/fashion-look-1.jpg', cap: 'Mercy Collection · Fashion', label: 'Mercy Collection' },
-  { src: '/assets/media/family.jpg', cap: 'Bridal Party · Group Glam', label: 'Bridal Party' },
+  { src: 'founders.jpg', cap: 'EMBACCI International · Brand Moments', span: 'big', label: 'Brand Moments', bg: 'var(--panel-3)' },
+  { src: 'airbrush.jpg', cap: 'Airbrush Technology · Product', bg: '#EFE9DF' },
+  { src: 'media/bts-bridal.jpg', cap: 'Bridal Glam · Addis Ababa', label: 'Bridal Glam' },
+  { src: 'media/gala-couple.jpg', cap: 'Editorial · Nairobi', label: 'Editorial' },
+  { src: 'media/office.jpg', cap: 'Hotel Concierge · Five-Star', span: 'wide', label: 'Hotel Concierge' },
+  { src: 'fashion-look-1.jpg', cap: 'Mercy Collection · Fashion', label: 'Mercy Collection' },
+  { src: 'media/family.jpg', cap: 'Bridal Party · Group Glam', label: 'Bridal Party' },
 ]
 
 const ghostBtn = { display: 'inline-flex', alignItems: 'center', gap: 12, border: '1px solid rgba(244,238,227,.32)', color: 'var(--text-bright)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none' }
@@ -181,7 +182,7 @@ export default function Home() {
       <section style={{ position: 'relative', height: '100vh', minHeight: 600, width: '100%', overflow: 'hidden', display: 'flex', alignItems: 'flex-end' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, background: 'var(--bg)', overflow: 'hidden' }}>
           <img
-            src="/assets/founders.jpg"
+            src={asset('founders.jpg')}
             alt=""
             aria-hidden="true"
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 30%', transformOrigin: 'center', animation: 'embZoom 26s ease-in-out infinite alternate' }}
@@ -195,7 +196,7 @@ export default function Home() {
             aria-hidden="true"
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', border: 0, pointerEvents: 'none' }}
           >
-            <source src="/assets/hero-video.mp4" type="video/mp4" />
+            <source src={asset('hero-video.mp4')} type="video/mp4" />
           </video>
         </div>
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(180deg, rgba(10,9,8,.62) 0%, rgba(10,9,8,.18) 32%, rgba(10,9,8,.55) 72%, #0A0908 100%)' }} />
@@ -265,7 +266,7 @@ export default function Home() {
         </Reveal>
         <Reveal style={{ position: 'relative' }}>
           <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--panel-3)', border: '1px solid rgba(244,238,227,.08)' }}>
-            <img src="/assets/who-we-are.jpg" alt="EMBACCI International founders in traditional Ethiopian attire" style={{ width: '100%', height: 'auto', maxHeight: 'clamp(420px,80vh,760px)', objectFit: 'contain', display: 'block', margin: '0 auto' }} />
+            <img src={asset('who-we-are.jpg')} alt="EMBACCI International founders in traditional Ethiopian attire" style={{ width: '100%', height: 'auto', maxHeight: 'clamp(420px,80vh,760px)', objectFit: 'contain', display: 'block', margin: '0 auto' }} />
             <div style={{ position: 'absolute', left: 24, bottom: 22, right: 24, textShadow: '0 2px 12px rgba(0,0,0,.7)' }}>
               <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 18, color: 'var(--text-bright)' }}>Born in Addis Ababa</div>
               <div style={{ fontSize: '10.5px', letterSpacing: '.3em', textTransform: 'uppercase', color: '#C9B7A6', marginTop: 6 }}>Heritage &amp; Vision</div>
@@ -320,7 +321,7 @@ export default function Home() {
           {SERVICES.map((s) => (
             <Reveal key={s.num} as={Link} to={s.to} delay={s.delay} className="hover-card" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', background: 'var(--panel-2)', border: '1px solid rgba(244,238,227,.08)' }}>
               <div className="hover-scale" style={{ position: 'relative', height: 340, overflow: 'hidden' }}>
-                <img src={s.img} alt={s.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: s.pos || 'center', display: 'block' }} />
+                <img src={asset(s.img)} alt={s.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: s.pos || 'center', display: 'block' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(10,9,8,.15) 0%,rgba(10,9,8,.55) 100%)' }} />
                 <div style={{ position: 'absolute', top: 18, left: 18, fontFamily: 'var(--serif)', fontSize: 20, color: 'var(--accent)' }}>{s.num}</div>
               </div>
@@ -339,7 +340,7 @@ export default function Home() {
         <div className="emb-g2" style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(72px,11vh,140px) clamp(18px,5vw,60px)', gap: 'clamp(36px,6vw,84px)', alignItems: 'center' }}>
           <Reveal style={{ position: 'relative' }}>
             <div style={{ background: 'linear-gradient(160deg,#EFE9DF,#DDD3C6)', padding: 40, display: 'grid', placeItems: 'center', overflow: 'hidden' }}>
-              <img src="/assets/airbrush.jpg" alt="EMBACCI Airbrush System" style={{ width: '100%', maxWidth: 420, objectFit: 'contain', display: 'block', mixBlendMode: 'multiply' }} />
+              <img src={asset('airbrush.jpg')} alt="EMBACCI Airbrush System" style={{ width: '100%', maxWidth: 420, objectFit: 'contain', display: 'block', mixBlendMode: 'multiply' }} />
             </div>
             <div style={{ position: 'absolute', bottom: 18, left: 18, background: 'var(--bg)', padding: '9px 16px', fontSize: 10, letterSpacing: '.28em', textTransform: 'uppercase', color: 'var(--accent)' }}>New Technology</div>
           </Reveal>
@@ -394,11 +395,11 @@ export default function Home() {
             return (
               <button
                 key={i}
-                onClick={() => openTile(g.src, g.cap)}
+                onClick={() => openTile(asset(g.src), g.cap)}
                 className="emb-tile"
                 style={{ ...span, position: 'relative', overflow: 'hidden', border: 'none', padding: 0, cursor: 'pointer', background: g.bg || 'var(--panel-3)' }}
               >
-                <img src={g.src} alt={g.cap} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <img src={asset(g.src)} alt={g.cap} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 {g.label && (
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,transparent 55%,rgba(10,9,8,.66))', display: 'flex', alignItems: 'flex-end', padding: 18 }}>
                     <span style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 17, color: 'var(--text-bright)' }}>{g.label}</span>

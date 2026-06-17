@@ -4,19 +4,20 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
+import { asset } from '../assets/index.js'
 
 const PRODUCTS = [
-  { name: 'EMBACCI Airbrush System', price: '$349', cat: 'airbrush', catLabel: 'Airbrush', tag: 'New', img: '/assets/shop/airbrush-system.jpg' },
-  { name: 'Blush Satin Camisole', price: '$54', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Satin', img: '/assets/shop/satin-cami-blush.jpg' },
-  { name: 'Blush Satin Wide-Leg Pant', price: '$78', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Satin', img: '/assets/shop/satin-pant-blush.jpg' },
-  { name: 'Dove Satin Wrap Blouse', price: '$92', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Limited', img: '/assets/shop/satin-wrap-dove.jpg' },
-  { name: 'Dove Satin Wide-Leg Pant', price: '$84', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Satin', img: '/assets/shop/satin-pant-dove.jpg' },
-  { name: 'Mist Ribbed Cap-Sleeve Top', price: '$48', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'New', img: '/assets/shop/ribbed-top-mist.jpg' },
-  { name: 'Mist Ribbed Wide-Leg Pant', price: '$72', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'New', img: '/assets/shop/ribbed-pant-mist.jpg' },
-  { name: 'Ivory Bouclé Slip Dress', price: '$86', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'New', img: '/assets/shop/boucle-slip-ivory.jpg' },
-  { name: 'Ivory Sleeveless Robe', price: '$98', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Loungewear', img: '/assets/shop/terry-robe-sleeveless.jpg' },
-  { name: 'Plush Terry Robe', price: '$118', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Luxury', img: '/assets/shop/terry-robe-short.jpg' },
-  { name: 'Plush Terry Robe Long', price: '$128', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Luxury', img: '/assets/shop/terry-robe-long.jpg' },
+  { name: 'EMBACCI Airbrush System', price: '$349', cat: 'airbrush', catLabel: 'Airbrush', tag: 'New', img: 'shop/airbrush-system.jpg' },
+  { name: 'Blush Satin Camisole', price: '$54', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Satin', img: 'shop/satin-cami-blush.jpg' },
+  { name: 'Blush Satin Wide-Leg Pant', price: '$78', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Satin', img: 'shop/satin-pant-blush.jpg' },
+  { name: 'Dove Satin Wrap Blouse', price: '$92', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Limited', img: 'shop/satin-wrap-dove.jpg' },
+  { name: 'Dove Satin Wide-Leg Pant', price: '$84', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Satin', img: 'shop/satin-pant-dove.jpg' },
+  { name: 'Mist Ribbed Cap-Sleeve Top', price: '$48', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'New', img: 'shop/ribbed-top-mist.jpg' },
+  { name: 'Mist Ribbed Wide-Leg Pant', price: '$72', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'New', img: 'shop/ribbed-pant-mist.jpg' },
+  { name: 'Ivory Bouclé Slip Dress', price: '$86', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'New', img: 'shop/boucle-slip-ivory.jpg' },
+  { name: 'Ivory Sleeveless Robe', price: '$98', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Loungewear', img: 'shop/terry-robe-sleeveless.jpg' },
+  { name: 'Plush Terry Robe', price: '$118', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Luxury', img: 'shop/terry-robe-short.jpg' },
+  { name: 'Plush Terry Robe Long', price: '$128', cat: 'fashion', catLabel: 'Mercy Collection', tag: 'Luxury', img: 'shop/terry-robe-long.jpg' },
 ]
 
 const CATS = [
@@ -112,7 +113,7 @@ export default function Shop() {
           {products.map((p) => (
             <div key={p.name} className="emb-prod hover-scale emb-rev in" style={{ background: 'var(--panel-2)', border: '1px solid rgba(244,238,227,.08)', display: 'flex', flexDirection: 'column', transition: 'border-color .4s' }}>
               <div style={{ position: 'relative', aspectRatio: '3/4', overflow: 'hidden', background: '#0f0c0a' }}>
-                <div className="scale-target" style={{ position: 'absolute', inset: 0, background: `url(${p.img}) center 38% / cover no-repeat` }} />
+                <div className="scale-target" style={{ position: 'absolute', inset: 0, background: `url(${asset(p.img)}) center 38% / cover no-repeat` }} />
                 <div style={{ position: 'absolute', top: 14, left: 14, background: 'rgba(10,9,8,.8)', color: 'var(--accent)', padding: '6px 12px', fontSize: 9, letterSpacing: '.2em', textTransform: 'uppercase' }}>{p.tag}</div>
               </div>
               <div style={{ padding: '22px 22px 24px', display: 'flex', flexDirection: 'column', flex: 1 }}>

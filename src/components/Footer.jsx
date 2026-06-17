@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { asset } from '../assets/index.js'
 
 const linkStyle = { textDecoration: 'none', color: 'var(--muted-2)' }
 const headStyle = { fontSize: 11, letterSpacing: '.28em', textTransform: 'uppercase', color: 'var(--muted-6)', marginBottom: 20 }
@@ -11,7 +12,7 @@ export default function Footer() {
         <div className="emb-footer-grid" style={{ gap: 40, paddingBottom: 50, borderBottom: '1px solid rgba(244,238,227,.08)' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-              <img src="/assets/logo-mark.png" alt="EMBACCI" style={{ height: 42, width: 'auto', display: 'block', flex: 'none' }} />
+              <img src={asset('logo-mark.png')} alt="EMBACCI" style={{ height: 42, width: 'auto', display: 'block', flex: 'none' }} />
               <div style={{ fontFamily: 'var(--serif)', fontSize: 18, letterSpacing: '.32em', fontWeight: 600, color: 'var(--text)' }}>EMBACCI</div>
             </div>
             <p style={{ fontSize: 14, fontWeight: 300, lineHeight: 1.8, color: 'var(--muted-4)', maxWidth: 300, margin: '0 0 20px' }}>

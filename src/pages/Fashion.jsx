@@ -4,12 +4,13 @@ import Footer from '../components/Footer.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Marquee from '../components/Marquee.jsx'
 import useReveal from '../hooks/useReveal.js'
+import { asset } from '../assets/index.js'
 
 const LOOKS = [
-  { img: '/assets/fashion-look-1.jpg', cap: 'Draped in soft satin', pos: '50% 22%', delay: undefined },
-  { img: '/assets/fashion-look-2.jpg', cap: 'Softness that speaks', pos: '50% 22%', delay: '.06s' },
-  { img: '/assets/fashion-look-3.jpg', cap: 'Morning light, soft robes', pos: '50% 22%', delay: '.12s' },
-  { img: '/assets/fashion-look-4.jpg', cap: 'Everyday elegance', pos: '50% 18%', delay: '.18s' },
+  { img: 'fashion-look-1.jpg', cap: 'Draped in soft satin', pos: '50% 22%', delay: undefined },
+  { img: 'fashion-look-2.jpg', cap: 'Softness that speaks', pos: '50% 22%', delay: '.06s' },
+  { img: 'fashion-look-3.jpg', cap: 'Morning light, soft robes', pos: '50% 22%', delay: '.12s' },
+  { img: 'fashion-look-4.jpg', cap: 'Everyday elegance', pos: '50% 18%', delay: '.18s' },
 ]
 
 const PILLARS = [
@@ -94,7 +95,7 @@ export default function Fashion() {
       {/* HERO */}
       <section style={{ position: 'relative', minHeight: '88vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', padding: 'clamp(150px,18vh,190px) clamp(18px,5vw,60px) clamp(54px,8vh,90px)' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, background: 'var(--bg)', overflow: 'hidden' }}>
-          <img src="/assets/fashion-hero.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '72% 22%', animation: 'embZoom 26s ease-in-out infinite alternate' }} />
+          <img src={asset('fashion-hero.jpg')} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '72% 22%', animation: 'embZoom 26s ease-in-out infinite alternate' }} />
         </div>
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(95deg, rgba(10,9,8,.86) 0%, rgba(10,9,8,.6) 34%, rgba(10,9,8,.12) 62%, rgba(10,9,8,.32) 100%)' }} />
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(0deg, rgba(10,9,8,.75) 0%, transparent 42%)' }} />
@@ -134,7 +135,7 @@ export default function Fashion() {
         <div className="emb-g4" style={{ gap: 14 }}>
           {LOOKS.map((l) => (
             <Reveal key={l.cap} delay={l.delay} className="hover-scale" style={{ position: 'relative', aspectRatio: '3/4', overflow: 'hidden', background: 'var(--panel-3)', display: 'flex', alignItems: 'flex-end', padding: 22 }}>
-              <img src={l.img} alt={l.cap} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: l.pos }} />
+              <img src={asset(l.img)} alt={l.cap} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: l.pos }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,transparent 52%,rgba(10,9,8,.78))' }} />
               <span style={{ position: 'relative', fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 17, color: 'var(--text-bright)' }}>{l.cap}</span>
             </Reveal>

@@ -4,6 +4,7 @@ import Footer from '../components/Footer.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
 import { bookLinkProps } from '../config/booking.js'
+import { asset } from '../assets/index.js'
 
 const eyebrow = { fontSize: '11.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#B89A82' }
 const benefitCard = { border: '1px solid rgba(244,238,227,.1)', padding: '36px 30px' }
@@ -40,7 +41,7 @@ export default function Skincare() {
       {/* HERO */}
       <section style={{ position: 'relative', minHeight: '78vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', padding: 'clamp(130px,15vh,190px) clamp(18px,5vw,60px) clamp(54px,8vh,90px)' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden', background: 'var(--bg)' }}>
-          <img src="/assets/godtree-hero.jpg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 45%', animation: 'embZoom 24s ease-in-out infinite alternate' }} />
+          <img src={asset('godtree-hero.jpg')} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 45%', animation: 'embZoom 24s ease-in-out infinite alternate' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,9,8,.6) 0%, rgba(10,9,8,.42) 40%, rgba(10,9,8,.82) 100%)' }} />
         </div>
         <div className="emb-rev in" style={{ position: 'relative', zIndex: 2, maxWidth: 1320, margin: '0 auto', width: '100%' }}>
@@ -91,7 +92,7 @@ export default function Skincare() {
         <div className="emb-g2" style={{ gap: 'clamp(40px,6vw,90px)', alignItems: 'center' }}>
           <Reveal style={{ position: 'relative' }}>
             <div style={{ aspectRatio: '1/1', overflow: 'hidden', background: 'var(--panel-3)' }}>
-              <img src="/assets/skincare-box.jpg" alt="Gob Tree Organic Skincare packaging" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <img src={asset('skincare-box.jpg')} alt="Gob Tree Organic Skincare packaging" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
           </Reveal>
           <Reveal>

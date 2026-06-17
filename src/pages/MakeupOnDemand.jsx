@@ -4,6 +4,7 @@ import Footer from '../components/Footer.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
 import { BOOK_URL, bookLinkProps } from '../config/booking.js'
+import { asset } from '../assets/index.js'
 
 const eyebrow = { fontSize: '11.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#B89A82' }
 const stepCard = { border: '1px solid rgba(244,238,227,.1)', padding: '38px 32px' }
@@ -41,10 +42,10 @@ const AIRBRUSH_FEATURES = [
 ]
 
 const OCCASIONS = [
-  ['/assets/occasion-weddings.jpg', 'Weddings', '50% 28%', '0s'],
-  ['/assets/occasion-events.jpg', 'Events & Parties', '50% 30%', '.06s'],
-  ['/assets/occasion-photoshoot.jpg', 'Photoshoots', '50% 30%', '.12s'],
-  ['/assets/occasion-hotel.jpg', 'Hotel Concierge', '50% 30%', '.18s'],
+  ['occasion-weddings.jpg', 'Weddings', '50% 28%', '0s'],
+  ['occasion-events.jpg', 'Events & Parties', '50% 30%', '.06s'],
+  ['occasion-photoshoot.jpg', 'Photoshoots', '50% 30%', '.12s'],
+  ['occasion-hotel.jpg', 'Hotel Concierge', '50% 30%', '.18s'],
 ]
 
 const COVERAGE = ['East Africa', 'United States', 'Hotels & Resorts', 'Private Events', 'Destination Weddings']
@@ -79,7 +80,7 @@ export default function MakeupOnDemand() {
       {/* HERO */}
       <section style={{ position: 'relative', minHeight: '74vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', padding: 'clamp(150px,18vh,190px) clamp(18px,5vw,60px) clamp(54px,8vh,90px)' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden', background: 'var(--bg)' }}>
-          <img src="/assets/mod-hero.jpg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 28%', animation: 'embZoom 24s ease-in-out infinite alternate' }} />
+          <img src={asset('mod-hero.jpg')} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 28%', animation: 'embZoom 24s ease-in-out infinite alternate' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,9,8,.62) 0%, rgba(10,9,8,.4) 38%, rgba(10,9,8,.82) 100%)' }} />
         </div>
         <div className="emb-rev in" style={{ position: 'relative', zIndex: 2, maxWidth: 1320, margin: '0 auto', width: '100%' }}>
@@ -182,7 +183,7 @@ export default function MakeupOnDemand() {
           <div className="emb-g4" style={{ gap: 16 }}>
             {OCCASIONS.map(([src, label, pos, delay]) => (
               <Reveal key={label} delay={delay} style={{ position: 'relative', aspectRatio: '3/4', overflow: 'hidden', background: 'var(--panel-3)', display: 'flex', alignItems: 'flex-end', padding: 20 }}>
-                <img src={src} alt={label} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: pos }} />
+                <img src={asset(src)} alt={label} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: pos }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,transparent 50%,rgba(10,9,8,.78))' }} />
                 <span style={occLabel}>{label}</span>
               </Reveal>

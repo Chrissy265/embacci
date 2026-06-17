@@ -5,6 +5,7 @@ import VideoEmbed from '../components/VideoEmbed.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
 import { bookLinkProps } from '../config/booking.js'
+import { asset } from '../assets/index.js'
 
 const chip = { border: '1px solid rgba(244,238,227,.16)', padding: '11px 18px', fontSize: 13, color: '#D8CFC2' }
 const chipCaps = { border: '1px solid rgba(244,238,227,.16)', padding: '11px 20px', fontSize: '11.5px', letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--muted-1)' }
@@ -105,7 +106,7 @@ export default function About() {
           </Reveal>
           <Reveal style={{ position: 'relative' }}>
             <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--panel-3)' }}>
-              <img src="/assets/founders.jpg" alt="EMBACCI International" style={{ width: '100%', height: 'clamp(420px,56vh,600px)', objectFit: 'cover', display: 'block' }} />
+              <img src={asset('founders.jpg')} alt="EMBACCI International" style={{ width: '100%', height: 'clamp(420px,56vh,600px)', objectFit: 'cover', display: 'block' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,transparent 55%,rgba(10,9,8,.66))' }} />
               <div style={{ position: 'absolute', left: 24, bottom: 22 }}>
                 <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 18, color: 'var(--text-bright)' }}>Born in Addis Ababa</div>
@@ -271,7 +272,7 @@ export default function About() {
                 <div style={{ position: 'relative', width: 'clamp(150px,42vw,236px)', aspectRatio: '1/1', marginBottom: 30 }}>
                   <div style={{ position: 'absolute', inset: -12, border: '1px solid rgba(199,122,72,.4)', borderRadius: '50%' }} />
                   <div style={{ width: '100%', height: '100%', borderRadius: '50%', overflow: 'hidden', background: 'var(--panel-3)' }}>
-                    <img src={`/assets/${m.img}.png`} alt={m.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: m.pos || undefined, display: 'block' }} />
+                    <img src={asset(`${m.img}.png`)} alt={m.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: m.pos || undefined, display: 'block' }} />
                   </div>
                 </div>
                 <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 24, lineHeight: 1.1, margin: '0 0 8px', color: 'var(--text-bright)' }}>{m.name}</h3>
@@ -358,7 +359,7 @@ export default function About() {
               </p>
             </div>
             <a
-              href="/assets/EMBACCI-Pitch-Deck.pdf"
+              href={asset('EMBACCI-Pitch-Deck.pdf')}
               download
               className="btn-primary"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 12, background: 'var(--accent)', color: 'var(--bg)', padding: '17px 30px', fontSize: 12, letterSpacing: '.16em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}

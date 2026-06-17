@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { bookLinkProps } from '../config/booking.js'
+import { asset } from '../assets/index.js'
 
 const SERVICES = ['makeup', 'skincare', 'academy']
 
@@ -71,7 +72,7 @@ export default function Nav({ active = '' }) {
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, padding: '16px clamp(18px,5vw,60px)' }}>
           <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 14, textDecoration: 'none' }}>
-            <img src="/assets/logo-mark.png" alt="EMBACCI" style={{ height: 48, width: 'auto', display: 'block', flex: 'none' }} />
+            <img src={asset('logo-mark.png')} alt="EMBACCI" style={{ height: 48, width: 'auto', display: 'block', flex: 'none' }} />
             <div style={{ lineHeight: 1 }}>
               <div style={{ fontFamily: 'var(--serif)', fontSize: 19, letterSpacing: '.34em', fontWeight: 600, color: 'var(--text)' }}>EMBACCI</div>
               <div style={{ fontSize: 8, letterSpacing: '.5em', color: 'var(--muted-5)', marginTop: 5, paddingLeft: 2 }}>INTERNATIONAL</div>

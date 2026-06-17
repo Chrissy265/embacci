@@ -4,6 +4,7 @@ import Footer from '../components/Footer.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
 import { bookLinkProps } from '../config/booking.js'
+import { asset } from '../assets/index.js'
 
 const eyebrow = { fontSize: '11.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#B89A82' }
 const statCell = { padding: '36px 12px', textAlign: 'center' }
@@ -32,9 +33,9 @@ const ADVANTAGES = [
 ]
 
 const BEFORE_AFTER = [
-  { img: '/assets/media/bts-bridal.jpg', label: 'Bridal', delay: '0s' },
-  { img: '/assets/media/salon-spray.jpg', label: 'Editorial', delay: '.06s' },
-  { img: '/assets/media/setting-spray.jpg', label: 'HD Glam', delay: '.12s' },
+  { img: 'media/bts-bridal.jpg', label: 'Bridal', delay: '0s' },
+  { img: 'media/salon-spray.jpg', label: 'Editorial', delay: '.06s' },
+  { img: 'media/setting-spray.jpg', label: 'HD Glam', delay: '.12s' },
 ]
 
 export default function Airbrush() {
@@ -64,7 +65,7 @@ export default function Airbrush() {
           </div>
           <div className="emb-rev in" style={{ position: 'relative' }}>
             <div style={{ background: 'linear-gradient(160deg,#EFE9DF,#DDD3C6)', padding: 46, display: 'grid', placeItems: 'center', overflow: 'hidden' }}>
-              <img src="/assets/airbrush.jpg" alt="EMBACCI Airbrush System" style={{ width: '100%', maxWidth: 440, objectFit: 'contain', display: 'block', mixBlendMode: 'multiply' }} />
+              <img src={asset('airbrush.jpg')} alt="EMBACCI Airbrush System" style={{ width: '100%', maxWidth: 440, objectFit: 'contain', display: 'block', mixBlendMode: 'multiply' }} />
             </div>
             <div style={{ position: 'absolute', bottom: 18, left: 18, background: 'var(--bg)', padding: '9px 16px', fontSize: 10, letterSpacing: '.28em', textTransform: 'uppercase', color: 'var(--accent)' }}>New Technology</div>
           </div>
@@ -190,7 +191,7 @@ export default function Airbrush() {
         <div className="emb-g3" style={{ gap: 16 }}>
           {BEFORE_AFTER.map(({ img, label, delay }) => (
             <Reveal key={label} delay={delay} className="hover-scale" style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', background: 'var(--panel-3)' }}>
-              <img src={img} alt={`Airbrush result · ${label}`} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <img src={asset(img)} alt={`Airbrush result · ${label}`} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,transparent 55%,rgba(10,9,8,.7))', display: 'flex', alignItems: 'flex-end', padding: 18 }}>
                 <span style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 17, color: 'var(--text-bright)' }}>{label}</span>
               </div>

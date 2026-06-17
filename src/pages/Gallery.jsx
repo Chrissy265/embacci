@@ -6,6 +6,7 @@ import Lightbox from '../components/Lightbox.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
 import { bookLinkProps } from '../config/booking.js'
+import { asset } from '../assets/index.js'
 
 const MEDIA = [
   ['family', 'The EMBACCI Family · Nairobi'],
@@ -51,7 +52,7 @@ export default function Gallery() {
   const [lb, setLb] = useState({ open: false, src: '', cap: '' })
   useReveal()
 
-  const open = (slug, cap) => setLb({ open: true, src: `/assets/media/${slug}.jpg`, cap })
+  const open = (slug, cap) => setLb({ open: true, src: asset(`media/${slug}.jpg`), cap })
   const close = () => setLb((s) => ({ ...s, open: false }))
 
   return (
@@ -91,7 +92,7 @@ export default function Gallery() {
         <div className="emb-masonry emb-rev in">
           {MEDIA.map(([slug, cap]) => (
             <button key={slug} onClick={() => open(slug, cap)} className="emb-mtile">
-              <img src={`/assets/media/${slug}.jpg`} alt={cap} loading="lazy" />
+              <img src={asset(`media/${slug}.jpg`)} alt={cap} loading="lazy" />
               <span className="emb-cap">
                 <span style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 15, color: 'var(--text-bright)' }}>{cap}</span>
               </span>
