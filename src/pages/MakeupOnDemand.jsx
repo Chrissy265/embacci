@@ -18,7 +18,7 @@ const contactDot = { width: 8, height: 8, background: 'var(--accent)', transform
 const coverageChip = { border: '1px solid rgba(244,238,227,.16)', padding: '12px 22px', fontSize: '12.5px', letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--muted-1)' }
 
 const STEPS = [
-  ['01', 'Tell Us the Occasion', 'Share your event, date, and location — wedding, party, photoshoot, or anything in between.', '0s'],
+  ['01', 'Tell Us the Occasion', 'Share your event, date, and location: wedding, party, photoshoot, or anything in between.', '0s'],
   ['02', 'We Match Your Artist', 'Our concierge confirms a vetted EMBACCI artist suited to your style and complexion.', '.08s'],
   ['03', 'We Come to You', 'Your artist arrives on time, fully equipped, for a luxurious at-your-door experience.', '.16s'],
 ]
@@ -97,7 +97,7 @@ export default function MakeupOnDemand() {
           <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(40px,7vw,108px)', lineHeight: .95, letterSpacing: '-0.012em', margin: 0, color: 'var(--text-bright)' }}>
             Makeup,<br /><span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>on demand.</span>
           </h1>
-          <p style={{ maxWidth: 560, margin: '28px 0 0', fontSize: 'clamp(15px,1.3vw,18px)', fontWeight: 300, lineHeight: 1.7, color: '#CFC6B8' }}>Available on-demand for hotels, weddings, corporate events, and high-profile occasions. Our artists bring elegance and expertise directly to your door — book in moments.</p>
+          <p style={{ maxWidth: 560, margin: '28px 0 0', fontSize: 'clamp(15px,1.3vw,18px)', fontWeight: 300, lineHeight: 1.7, color: '#CFC6B8' }}>Available on-demand for hotels, weddings, corporate events, and high-profile occasions. Our artists bring elegance and expertise directly to your door. Book in moments.</p>
           <div style={{ marginTop: 36 }}>
             <a href="#book" className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 34px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</a>
           </div>

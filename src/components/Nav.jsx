@@ -107,7 +107,7 @@ export default function Nav({ active = '' }) {
               <Link to="/makeup-on-demand" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'var(--accent)', color: 'var(--bg)', padding: '13px 24px', fontSize: '11.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book Now</Link>
             )}
             {small && (
-              <button onClick={() => setMenuOpen(true)} aria-label="Menu" style={{ display: 'flex', flexDirection: 'column', gap: 5, background: 'none', border: 'none', cursor: 'pointer', padding: 6 }}>
+              <button onClick={() => setMenuOpen(true)} aria-label="Menu" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 5, background: 'none', border: 'none', cursor: 'pointer', width: 44, height: 44, padding: 0 }}>
                 <span style={{ width: 24, height: 1.5, background: 'var(--text)', display: 'block' }} />
                 <span style={{ width: 24, height: 1.5, background: 'var(--text)', display: 'block' }} />
                 <span style={{ width: 16, height: 1.5, background: 'var(--text)', display: 'block' }} />
@@ -136,7 +136,7 @@ export default function Nav({ active = '' }) {
               ['/shop', 'Shop'],
               ['/gallery', 'Media'],
             ].map(([to, label]) => (
-              <Link key={to} to={to} style={{ fontFamily: 'var(--serif)', fontSize: 30, textDecoration: 'none', color: 'var(--text)', padding: '9px 0', borderBottom: '1px solid rgba(244,238,227,.08)' }}>{label}</Link>
+              <Link key={to} to={to} style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(22px,6vw,30px)', textDecoration: 'none', color: 'var(--text)', padding: '9px 0', borderBottom: '1px solid rgba(244,238,227,.08)' }}>{label}</Link>
             ))}
           </nav>
           <Link to="/makeup-on-demand" onClick={() => setMenuOpen(false)} style={{ marginTop: 28, textAlign: 'center', background: 'var(--accent)', color: 'var(--bg)', padding: 18, fontSize: 13, letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</Link>

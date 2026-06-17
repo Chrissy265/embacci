@@ -24,9 +24,9 @@ const HOW = [
 const ADVANTAGES = [
   ['01', 'Flawless Finish', 'A smooth, poreless, filter-like effect.'],
   ['02', 'Hygienic & Contact-Free', 'No brushes. No sponges. No cross-contamination.'],
-  ['03', 'Time-Efficient', 'Cuts application time by 40% — ideal for high-volume bookings.'],
+  ['03', 'Time-Efficient', 'Cuts application time by 40%, ideal for high-volume bookings.'],
   ['04', 'Long-Lasting Wear', 'Stays fresh up to 18 hours without touch-ups.'],
-  ['05', 'Lightweight Feel', 'Breathable and comfortable — feels like nothing on the skin.'],
+  ['05', 'Lightweight Feel', 'Breathable and comfortable. It feels like nothing on the skin.'],
   ['06', 'Universal Compatibility', 'Works on oily, dry, sensitive, and combination skin.'],
 ]
 
@@ -46,7 +46,7 @@ export default function Airbrush() {
       {/* HERO */}
       <section style={{ position: 'relative', minHeight: '82vh', display: 'flex', alignItems: 'center', overflow: 'hidden', padding: 'clamp(150px,18vh,190px) clamp(18px,5vw,60px) clamp(54px,8vh,90px)' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, background: 'radial-gradient(120% 100% at 78% 40%, #2a1d14 0%, #0f0b09 55%, #0A0908 100%)' }} />
-        <div className="emb-g2" style={{ position: 'relative', zIndex: 2, maxWidth: 1320, margin: '0 auto', width: '100%', gridTemplateColumns: '1.05fr .95fr', gap: 'clamp(30px,5vw,70px)', alignItems: 'center' }}>
+        <div className="emb-split" style={{ position: 'relative', zIndex: 2, maxWidth: 1320, margin: '0 auto', width: '100%', gap: 'clamp(30px,5vw,70px)', alignItems: 'center' }}>
           <div className="emb-rev in">
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 24 }}>
               <span style={{ width: 42, height: 1, background: 'var(--accent)' }} />
@@ -55,7 +55,7 @@ export default function Airbrush() {
             <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(40px,6.6vw,98px)', lineHeight: .95, letterSpacing: '-0.012em', margin: 0, color: 'var(--text-bright)' }}>
               Precision.<br />Speed. <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Luxury.</span>
             </h1>
-            <p style={{ maxWidth: 520, margin: '28px 0 0', fontSize: 'clamp(15px,1.3vw,18px)', fontWeight: 300, lineHeight: 1.7, color: '#CFC6B8' }}>A next-generation beauty system for flawless, hygienic, and long-lasting makeup — camera-ready coverage that blends seamlessly into every skin tone and undertone. The future of beauty, for every complexion.</p>
+            <p style={{ maxWidth: 520, margin: '28px 0 0', fontSize: 'clamp(15px,1.3vw,18px)', fontWeight: 300, lineHeight: 1.7, color: '#CFC6B8' }}>A next-generation beauty system for flawless, hygienic, and long-lasting makeup, camera-ready coverage that blends seamlessly into every skin tone and undertone. The future of beauty, for every complexion.</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 36 }}>
               <Link to="/makeup-on-demand" className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Airbrush Artist</Link>
               <a href="#how" className="btn-ghost" style={{ border: '1px solid rgba(244,238,227,.32)', color: 'var(--text-bright)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none' }}>How It Works</a>
@@ -85,7 +85,7 @@ export default function Airbrush() {
         <Reveal>
           <div style={{ ...eyebrow, marginBottom: 22 }}>What It Is</div>
           <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(28px,3.8vw,52px)', lineHeight: 1.12, margin: '0 0 28px', color: 'var(--text-bright)' }}>A fine-mist spray, powered by advanced air-compression.</h2>
-          <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', maxWidth: 760, margin: '0 auto' }}>EMBACCI's Airbrush Technology delivers even, weightless coverage that blends seamlessly into every skin tone and undertone — a soft, diffused, filter-like finish that traditional brushes and sponges simply cannot achieve. Fast, precise, and camera-ready.</p>
+          <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', maxWidth: 760, margin: '0 auto' }}>EMBACCI's Airbrush Technology delivers even, weightless coverage that blends seamlessly into every skin tone and undertone, a soft, diffused, filter-like finish that traditional brushes and sponges simply cannot achieve. Fast, precise, and camera-ready.</p>
         </Reveal>
       </section>
 
@@ -128,7 +128,7 @@ export default function Airbrush() {
           </Reveal>
           <Reveal delay=".06s" style={capCard}>
             <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 22, margin: '0 0 16px', color: 'var(--text-bright)' }}>Bridal &amp; Event</h3>
-            <div style={{ fontSize: 14, lineHeight: 2, color: 'var(--muted-4)' }}>Sweat-resistant · Tear-resistant · 12–18 hour wear</div>
+            <div style={{ fontSize: 14, lineHeight: 2, color: 'var(--muted-4)' }}>Sweat-resistant · Tear-resistant · 12 to 18 hour wear</div>
           </Reveal>
           <Reveal delay=".12s" style={capCard}>
             <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 22, margin: '0 0 16px', color: 'var(--text-bright)' }}>HD &amp; Camera-Ready</h3>
@@ -161,7 +161,7 @@ export default function Airbrush() {
               <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(28px,3.8vw,52px)', lineHeight: 1.04, margin: '0 0 22px', color: 'var(--text-bright)' }}>
                 The advantages of <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>airbrush artistry.</span>
               </h2>
-              <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', margin: 0 }}>Our airbrush foundation is skin-safe, non-comedogenic, sweat-resistant, and humidity-proof — designed for multicultural beauty and blending seamlessly with our Gob Tree Organic Skincare for a smooth, radiant base.</p>
+              <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', margin: 0 }}>Our airbrush foundation is skin-safe, non-comedogenic, sweat-resistant, and humidity-proof, designed for multicultural beauty and blending seamlessly with our Gob Tree Organic Skincare for a smooth, radiant base.</p>
             </Reveal>
             <Reveal>
               {ADVANTAGES.map(([num, title, body], i) => (
@@ -203,7 +203,7 @@ export default function Airbrush() {
         <div className="emb-g2" style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(64px,9vh,110px) clamp(18px,5vw,60px)', gap: 24, alignItems: 'center' }}>
           <Reveal>
             <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(28px,4vw,54px)', lineHeight: 1.04, margin: '0 0 18px', color: 'var(--text-bright)' }}>Ready for the future of beauty?</h2>
-            <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.7, color: '#C5BBAD', maxWidth: 480, margin: 0 }}>Book an airbrush artist for your wedding, event, or shoot — or get certified through our Training Academy.</p>
+            <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.7, color: '#C5BBAD', maxWidth: 480, margin: 0 }}>Book an airbrush artist for your wedding, event, or shoot, or get certified through our Training Academy.</p>
           </Reveal>
           <Reveal style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'flex-end' }}>
             <Link to="/makeup-on-demand" className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</Link>

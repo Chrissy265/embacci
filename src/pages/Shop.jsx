@@ -58,7 +58,7 @@ export default function Shop() {
             New Shop Experience<br /><span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Coming Soon.</span>
           </h2>
           <p style={{ margin: '28px auto 0', maxWidth: 440, fontSize: 'clamp(14px,1.2vw,16px)', fontWeight: 300, lineHeight: 1.8, color: 'var(--muted-2)' }}>
-            We are crafting an elevated way to shop EMBACCI — airbrush technology, Gob Tree skincare, and the Mercy Collection, beautifully reborn.
+            We are crafting an elevated way to shop EMBACCI: airbrush technology, Gob Tree skincare, and the Mercy Collection, beautifully reborn.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, marginTop: 34 }}>
             <span style={{ width: 26, height: 1, background: 'rgba(244,238,227,.25)' }} />
@@ -81,7 +81,7 @@ export default function Shop() {
             Shop <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>EMBACCI</span>
           </h1>
           <p style={{ maxWidth: 560, margin: '26px auto 0', fontSize: 'clamp(15px,1.3vw,18px)', fontWeight: 300, lineHeight: 1.7, color: 'var(--muted-2)' }}>
-            Airbrush technology, Gob Tree organic skincare, and the Mercy Collection — luxury, delivered to your door.
+            Airbrush technology, Gob Tree organic skincare, and the Mercy Collection: luxury, delivered to your door.
           </p>
         </div>
       </section>

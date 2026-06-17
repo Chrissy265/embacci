@@ -37,7 +37,7 @@ export default function Skincare() {
       <Nav active="skincare" />
 
       {/* HERO */}
-      <section style={{ position: 'relative', minHeight: '78vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', padding: 'clamp(150px,18vh,190px) clamp(18px,5vw,60px) clamp(54px,8vh,90px)' }}>
+      <section style={{ position: 'relative', minHeight: '78vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', padding: 'clamp(130px,15vh,190px) clamp(18px,5vw,60px) clamp(54px,8vh,90px)' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden', background: 'var(--bg)' }}>
           <img src="/assets/godtree-hero.jpg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 45%', animation: 'embZoom 24s ease-in-out infinite alternate' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,9,8,.6) 0%, rgba(10,9,8,.42) 40%, rgba(10,9,8,.82) 100%)' }} />
@@ -66,7 +66,7 @@ export default function Skincare() {
           <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(26px,3.6vw,48px)', lineHeight: 1.25, margin: '0 0 28px', color: 'var(--text-bright)' }}>
             Beauty rooted in the soil of <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Ethiopia.</span>
           </h2>
-          <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', maxWidth: 720, margin: '0 auto' }}>For generations, the Gob Tree has been revered for its restorative gifts. We honor that heritage — ethically sourcing each botanical and crafting it into a modern skincare ritual that hydrates, heals, and renews every complexion.</p>
+          <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', maxWidth: 720, margin: '0 auto' }}>For generations, the Gob Tree has been revered for its restorative gifts. We honor that heritage by ethically sourcing each botanical and crafting it into a modern skincare ritual that hydrates, heals, and renews every complexion.</p>
         </Reveal>
       </section>
 
@@ -101,7 +101,7 @@ export default function Skincare() {
             <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(26px,3.4vw,46px)', lineHeight: 1.1, margin: '0 0 24px', color: 'var(--text-bright)' }}>
               The perfect base for <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>airbrush artistry.</span>
             </h2>
-            <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', margin: '0 0 26px' }}>Gob Tree Organic Skincare blends seamlessly with the EMBACCI Airbrush System for a smooth, radiant canvas — prepping skin so makeup sits flawlessly and lasts longer.</p>
+            <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', margin: '0 0 26px' }}>Gob Tree Organic Skincare blends seamlessly with the EMBACCI Airbrush System for a smooth, radiant canvas, prepping skin so makeup sits flawlessly and lasts longer.</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               <span style={tag}>Ethically Sourced</span>
               <span style={tag}>100% Organic</span>
@@ -122,7 +122,7 @@ export default function Skincare() {
             <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(28px,3.8vw,50px)', lineHeight: 1.04, margin: '0 0 22px', color: 'var(--text-bright)' }}>
               Gob Tree Organic <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Skincare.</span>
             </h2>
-            <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', margin: 0 }}>EMBACCI distributes and uses Gob Tree Organic Skincare — a natural Ethiopian skincare line crafted with intention, purity, and respect for tradition.</p>
+            <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', margin: 0 }}>EMBACCI distributes and uses Gob Tree Organic Skincare, a natural Ethiopian skincare line crafted with intention, purity, and respect for tradition.</p>
           </Reveal>
           <div className="emb-g2" style={{ gap: 'clamp(28px,4vw,56px)' }}>
             <Reveal>

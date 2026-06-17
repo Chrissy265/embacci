@@ -21,32 +21,32 @@ const TEAM = [
   },
   {
     img: 'team-wongel', name: 'Wongel Wasihun', title: 'Beauty Project Director, Ethiopia',
-    desc: "Directing EMBACCI's beauty projects in Ethiopia, Wongel pairs creative direction with flawless execution — shaping signature looks and elevating every client experience.",
+    desc: "Directing EMBACCI's beauty projects in Ethiopia, Wongel pairs creative direction with flawless execution, shaping signature looks and elevating every client experience.",
     delay: '.08s', pos: null,
   },
   {
     img: 'team-beena', name: 'Beena Pandya', title: 'Kenya Makeup Director',
-    desc: "Heading EMBACCI's makeup artistry in Kenya, Beena blends technical mastery with an eye for timeless glamour — delivering refined, camera-ready beauty for every occasion.",
-    delay: '.16s', pos: '50% 18%',
+    desc: "Heading EMBACCI's makeup artistry in Kenya, Beena blends technical mastery with an eye for timeless glamour, delivering refined, camera-ready beauty for every occasion.",
+    delay: '.16s', pos: '50% 50%',
   },
   {
     img: 'team-mihret', name: 'Mihret Mengiste', title: 'Fashion Director, Ethiopia',
-    desc: "Shaping EMBACCI's fashion vision in Ethiopia, Mihret fuses contemporary style with cultural heritage — styling looks that celebrate elegance and individuality.",
+    desc: "Shaping EMBACCI's fashion vision in Ethiopia, Mihret fuses contemporary style with cultural heritage, styling looks that celebrate elegance and individuality.",
     delay: '0s', pos: '50% 22%',
   },
   {
     img: 'team-mahlet', name: 'Mahlet Wolde', title: 'Co-Owner & Admin Director, Ethiopia',
-    desc: "As Co-Owner and Admin Director, Mahlet steers EMBACCI's operations and governance in Ethiopia — building the structure and stability behind every flawless experience.",
+    desc: "As Co-Owner and Admin Director, Mahlet steers EMBACCI's operations and governance in Ethiopia, building the structure and stability behind every flawless experience.",
     delay: '.08s', pos: '50% 22%',
   },
   {
     img: 'team-kristufar', name: 'Kristufar Tariq', title: 'Owner & Policy Coordinator, US / Ethiopia',
-    desc: "As Owner and Policy Coordinator across the US and Ethiopia, Kristufar guides EMBACCI's strategy and standards — bridging two markets with vision and integrity.",
+    desc: "As Owner and Policy Coordinator across the US and Ethiopia, Kristufar guides EMBACCI's strategy and standards, bridging two markets with vision and integrity.",
     delay: '.16s', pos: '50% 22%',
   },
   {
     img: 'team-christina', name: 'Christina Beckford', title: 'IT Director, USA',
-    desc: "Leading EMBACCI's technology in the USA, Christina builds the digital backbone behind the brand — from the booking platform to the systems that power beauty on demand.",
+    desc: "Leading EMBACCI's technology in the USA, Christina builds the digital backbone behind the brand, from the booking platform to the systems that power beauty on demand.",
     delay: '0s', pos: '50% 18%',
   },
 ]
@@ -59,7 +59,7 @@ export default function About() {
       <Nav active="about" />
 
       {/* HERO */}
-      <section style={{ position: 'relative', minHeight: '74vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', padding: 'clamp(150px,20vh,190px) clamp(18px,5vw,60px) clamp(54px,8vh,90px)' }}>
+      <section style={{ position: 'relative', minHeight: '74vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', padding: 'clamp(130px,16vh,190px) clamp(18px,5vw,60px) clamp(54px,8vh,90px)' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden', background: 'var(--bg)' }}>
           <iframe
             src="https://www.youtube.com/embed/Adq4AqKDK6c?autoplay=1&mute=1&loop=1&playlist=Adq4AqKDK6c&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&disablekb=1"
@@ -68,7 +68,9 @@ export default function About() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-            style={{ position: 'absolute', top: '50%', left: '50%', width: '100vw', height: '56.25vw', minHeight: '100%', minWidth: '177.78vh', transform: 'translate(-50%,-50%)', border: 0, pointerEvents: 'none' }}
+            // Cover the hero without overflowing the page: sized to the container
+            // (100%/177.78% of its own box), clipped by the parent's overflow:hidden.
+            style={{ position: 'absolute', top: '50%', left: '50%', width: '100%', height: '177.78%', minHeight: '100%', minWidth: '177.78%', transform: 'translate(-50%,-50%)', border: 0, pointerEvents: 'none' }}
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,9,8,.72) 0%, rgba(10,9,8,.4) 40%, rgba(10,9,8,.78) 100%)' }} />
         </div>
@@ -81,7 +83,7 @@ export default function About() {
             Elegance, Born<br />in <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Ethiopia.</span>
           </h1>
           <p style={{ maxWidth: 560, margin: '28px 0 0', fontSize: 'clamp(15px,1.3vw,18px)', fontWeight: 300, lineHeight: 1.7, color: 'var(--muted-2)' }}>
-            A premier beauty concierge brand with a five-star reputation across the East African beauty industry — now bringing luxury, on-demand artistry to the world.
+            A premier beauty concierge brand with a five-star reputation across the East African beauty industry. Now bringing luxury, on-demand artistry to the world.
           </p>
         </div>
       </section>
@@ -98,7 +100,7 @@ export default function About() {
               A beauty concierge brand thriving across <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>two continents.</span>
             </h2>
             <p style={{ ...historyP, margin: '0 0 20px' }}>EMBACCI INTERNATIONAL specializes in delivering luxurious, on-demand makeup and styling services to four- and five-star hotels, elite events, weddings, conferences, and private gatherings. We bring elegance and expertise directly to your door.</p>
-            <p style={{ ...historyP, margin: 0 }}>Rooted in Ethiopian heritage and built for a global stage, we celebrate beauty in every complexion — honoring culture, craftsmanship, and the modern woman.</p>
+            <p style={{ ...historyP, margin: 0 }}>Rooted in Ethiopian heritage and built for a global stage, we celebrate beauty in every complexion, honoring culture, craftsmanship, and the modern woman.</p>
           </Reveal>
           <Reveal style={{ position: 'relative' }}>
             <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--panel-3)' }}>
@@ -126,7 +128,7 @@ export default function About() {
             <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(28px,3.7vw,50px)', lineHeight: 1.08, margin: '0 0 18px', color: 'var(--text-bright)' }}>
               The EMBACCI <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>story.</span>
             </h2>
-            <p style={{ fontSize: 13, letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--muted-5)', margin: 0 }}>A multicultural beauty company — born in the U.S., rooted in Africa</p>
+            <p style={{ fontSize: 13, letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--muted-5)', margin: 0 }}>A multicultural beauty company, born in the U.S., rooted in Africa</p>
           </Reveal>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(40px,5vh,60px)', marginTop: 'clamp(40px,6vh,70px)' }}>
@@ -137,7 +139,7 @@ export default function About() {
               <div>
                 <h3 style={historyH3}>Our Beginning</h3>
                 <p style={{ ...historyP, margin: '0 0 16px' }}>EMBACCI International was founded with a simple but powerful belief: beauty should be accessible, inclusive, and culturally intelligent.</p>
-                <p style={{ ...historyP, margin: '0 0 16px' }}>What began as a small, on-demand beauty concierge service in the United States quickly evolved into a multinational beauty and wellness company serving clients across the U.S., Ethiopia, and Kenya. The founders recognized a major gap in the global beauty industry — a lack of professional services and products designed for multicultural skin tones and diverse beauty needs.</p>
+                <p style={{ ...historyP, margin: '0 0 16px' }}>What began as a small, on-demand beauty concierge service in the United States quickly evolved into a multinational beauty and wellness company serving clients across the U.S., Ethiopia, and Kenya. The founders recognized a major gap in the global beauty industry, a lack of professional services and products designed for multicultural skin tones and diverse beauty needs.</p>
                 <p style={{ ...historyP, margin: 0 }}>EMBACCI was created to fill that gap.</p>
               </div>
             </Reveal>
@@ -222,7 +224,7 @@ export default function About() {
                   <span style={chip}>Event production</span>
                   <span style={chip}>Training &amp; talent development</span>
                 </div>
-                <p style={{ ...historyP, margin: 0 }}>The company's leadership brings together U.S. operational excellence with East African cultural insight — creating a brand that is both global and deeply rooted.</p>
+                <p style={{ ...historyP, margin: 0 }}>The company's leadership brings together U.S. operational excellence with East African cultural insight, creating a brand that is both global and deeply rooted.</p>
               </div>
             </Reveal>
 
@@ -287,17 +289,17 @@ export default function About() {
             <Reveal>
               <div style={{ fontFamily: 'var(--serif)', fontSize: 20, color: 'var(--accent)', marginBottom: 18 }}>01</div>
               <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 26, margin: '0 0 16px', color: 'var(--text-bright)' }}>Our Mission</h3>
-              <p style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.8, color: 'var(--muted-4)', margin: 0 }}>To empower beauty through culture, care, and connection — serving the African diaspora and global communities with dignity and distinction.</p>
+              <p style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.8, color: 'var(--muted-4)', margin: 0 }}>To empower beauty through culture, care, and connection, serving the African diaspora and global communities with dignity and distinction.</p>
             </Reveal>
             <Reveal delay=".08s">
               <div style={{ fontFamily: 'var(--serif)', fontSize: 20, color: 'var(--accent)', marginBottom: 18 }}>02</div>
               <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 26, margin: '0 0 16px', color: 'var(--text-bright)' }}>Our Vision</h3>
-              <p style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.8, color: 'var(--muted-4)', margin: 0 }}>To become the world's most trusted on-demand luxury beauty brand — a global name synonymous with Ethiopian elegance and five-star service.</p>
+              <p style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.8, color: 'var(--muted-4)', margin: 0 }}>To become the world's most trusted on-demand luxury beauty brand, a global name synonymous with Ethiopian elegance and five-star service.</p>
             </Reveal>
             <Reveal delay=".16s">
               <div style={{ fontFamily: 'var(--serif)', fontSize: 20, color: 'var(--accent)', marginBottom: 18 }}>03</div>
               <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 26, margin: '0 0 16px', color: 'var(--text-bright)' }}>Our Promise</h3>
-              <p style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.8, color: 'var(--muted-4)', margin: 0 }}>Luxury you can feel — flawless artistry, ethical products, and an experience tailored to every occasion and every complexion.</p>
+              <p style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.8, color: 'var(--muted-4)', margin: 0 }}>Luxury you can feel, with flawless artistry, ethical products, and an experience tailored to every occasion and every complexion.</p>
             </Reveal>
           </div>
         </div>
@@ -308,7 +310,7 @@ export default function About() {
         <Reveal>
           <div style={{ fontFamily: 'var(--serif)', fontSize: 64, lineHeight: 1, color: 'var(--accent)', marginBottom: 10 }}>&ldquo;</div>
           <p style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontStyle: 'italic', fontSize: 'clamp(24px,3.4vw,44px)', lineHeight: 1.35, color: 'var(--text-bright)', margin: '0 0 28px' }}>
-            Inspired by Ethiopia. Designed for the world. We don't just apply beauty — we honor identity, heritage, and self-love.
+            Inspired by Ethiopia. Designed for the world. We don't just apply beauty. We honor identity, heritage, and self-love.
           </p>
           <div style={{ fontSize: '11.5px', letterSpacing: '.3em', textTransform: 'uppercase', color: 'var(--muted-5)' }}>EMBACCI International</div>
         </Reveal>
@@ -326,7 +328,7 @@ export default function About() {
             <Reveal delay=".1s">
               <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(26px,3.4vw,46px)', lineHeight: 1.12, margin: '0 0 24px', color: 'var(--text-bright)' }}>Our Global Vision</h2>
               <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', margin: '0 0 34px' }}>
-                Operating from East Africa and the United States, EMBACCI INTERNATIONAL is expanding across North America, South America, the Caribbean, and the broader African diaspora — with a commitment to excellence, cultural pride, and transformative beauty experiences.
+                Operating from East Africa and the United States, EMBACCI INTERNATIONAL is expanding across North America, South America, the Caribbean, and the broader African diaspora, with a commitment to excellence, cultural pride, and transformative beauty experiences.
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
                 {['East Africa', 'United States', 'North America', 'South America', 'The Caribbean', 'African Diaspora'].map((r) => (
@@ -351,7 +353,7 @@ export default function About() {
                 Investment Pitch <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Deck.</span>
               </h2>
               <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.8, color: 'var(--muted-3)', margin: 0 }}>
-                A closer look at the EMBACCI opportunity — our business model, proprietary airbrush technology, and the mobile platform bringing luxury beauty on demand to the world.
+                A closer look at the EMBACCI opportunity, our business model, proprietary airbrush technology, and the mobile platform bringing luxury beauty on demand to the world.
               </p>
             </div>
             <a
@@ -380,7 +382,7 @@ export default function About() {
               <span style={{ fontFamily: 'var(--serif)', fontSize: 20, color: 'var(--accent)' }}>02</span>
               <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(22px,2.8vw,34px)', lineHeight: 1.1, margin: 0, color: 'var(--text-bright)' }}>Makeup Airbrush Technology</h3>
             </div>
-            <p style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.7, color: 'var(--muted-4)', margin: '0 0 24px', paddingLeft: 38, maxWidth: 640 }}>The future of beauty — precision, speed, and luxury for every complexion.</p>
+            <p style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.7, color: 'var(--muted-4)', margin: '0 0 24px', paddingLeft: 38, maxWidth: 640 }}>The future of beauty: precision, speed, and luxury for every complexion.</p>
             <VideoEmbed videoId="M8hOU6fvd74" label="Airbrush Technology" aspect="16/9" />
           </Reveal>
 
@@ -390,7 +392,7 @@ export default function About() {
               <span style={{ fontFamily: 'var(--serif)', fontSize: 20, color: 'var(--accent)' }}>03</span>
               <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(22px,2.8vw,34px)', lineHeight: 1.1, margin: 0, color: 'var(--text-bright)' }}>EMBACCI Mobile App</h3>
             </div>
-            <p style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.7, color: 'var(--muted-4)', margin: '0 0 24px', paddingLeft: 38, maxWidth: 640 }}>Beauty on demand, in the palm of your hand — booking your artist in moments.</p>
+            <p style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.7, color: 'var(--muted-4)', margin: '0 0 24px', paddingLeft: 38, maxWidth: 640 }}>Beauty on demand, in the palm of your hand, booking your artist in moments.</p>
             <VideoEmbed videoId="IfzVA-wQZYk" label="Mobile App" aspect="16/9" />
           </Reveal>
         </div>

@@ -27,7 +27,7 @@ export default function Footer() {
               Luxury beauty, global identity, on-demand excellence. Born in Ethiopia, serving the African diaspora and the world.
             </p>
             <a href="https://www.instagram.com/embacci_international" className="link-accent" style={{ fontSize: '12.5px', letterSpacing: '.1em', color: 'var(--accent)', textDecoration: 'none' }}>
-              Instagram — @embacci_international
+              Instagram @embacci_international
             </a>
           </div>
 

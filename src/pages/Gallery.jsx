@@ -70,7 +70,7 @@ export default function Gallery() {
             Gallery &amp; <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Global Impact</span>
           </h1>
           <p style={{ maxWidth: 560, margin: '26px auto 0', fontSize: 'clamp(15px,1.3vw,18px)', fontWeight: 300, lineHeight: 1.7, color: '#CFC6B8' }}>
-            A celebration of artistry, culture, and the communities we serve — from Addis Ababa to the world.
+            A celebration of artistry, culture, and the communities we serve, from Addis Ababa to the world.
           </p>
         </div>
       </section>

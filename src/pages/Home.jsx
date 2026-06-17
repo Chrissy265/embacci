@@ -1,11 +1,24 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import Lightbox from '../components/Lightbox.jsx'
 import Marquee from '../components/Marquee.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
+
+// EmailJS config — set these in a .env file (see .env.example). Notification
+// emails for the "Let's Talk" form are sent to both EMBACCI inboxes below.
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || ''
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || ''
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+// Notification recipients. EmailJS's "To Email" field takes ONE address well;
+// the second goes in the template's Cc field. Both are also comma-joined for
+// the mailto fallback.
+const NOTIFY_TO = 'africa@embacci.com'
+const NOTIFY_CC = 'eastafrica@embacci.com'
+const NOTIFY_EMAILS = `${NOTIFY_TO}, ${NOTIFY_CC}`
 
 const MARQUEE = [
   'Elegance Born in Ethiopia',
@@ -33,7 +46,7 @@ const SERVICES = [
     num: '02',
     img: '/assets/media/product-salon.jpg',
     title: 'Organic Skincare from Ethiopia',
-    body: 'Featuring our exclusive Gob Tree collection — an ancient botanical treasure known for its healing, hydrating, and rejuvenating properties. Sourced ethically and crafted for radiant skin.',
+    body: 'Featuring our exclusive Gob Tree collection, an ancient botanical treasure known for its healing, hydrating, and rejuvenating properties. Sourced ethically and crafted for radiant skin.',
     cta: 'Shop Skincare',
     delay: '.08s',
   },
@@ -49,10 +62,10 @@ const SERVICES = [
 ]
 
 const FAQS = [
-  { q: 'How do I book an artist?', a: 'Tell us your occasion, date and location in the form above — or message our concierge on WhatsApp — and we confirm a vetted EMBACCI artist instantly.' },
-  { q: 'Where do you provide services?', a: 'We operate on-demand across East Africa and the United States, serving four- and five-star hotels, weddings, conferences, and private events — with a global rollout beginning in 2026.' },
-  { q: 'Do you cater to all skin tones?', a: 'Absolutely. Our airbrush system and artistry are formulated for multicultural beauty — deep, olive, and fair tones across neutral, warm, and cool undertones.' },
-  { q: 'Can I get certified as an airbrush artist?', a: 'Yes — the EMBACCI Airbrush Training Academy offers 1-Day Intensive and 2-Day Professional Certification programs, recognized across the U.S., Canada, and Africa.' },
+  { q: 'How do I book an artist?', a: 'Tell us your occasion, date and location in the form above, or message our concierge on WhatsApp, and we confirm a vetted EMBACCI artist instantly.' },
+  { q: 'Where do you provide services?', a: 'We operate on-demand across East Africa and the United States, serving four- and five-star hotels, weddings, conferences, and private events, with a global rollout beginning in 2026.' },
+  { q: 'Do you cater to all skin tones?', a: 'Absolutely. Our airbrush system and artistry are formulated for multicultural beauty: deep, olive, and fair tones across neutral, warm, and cool undertones.' },
+  { q: 'Can I get certified as an airbrush artist?', a: 'Yes. The EMBACCI Airbrush Training Academy offers 1-Day Intensive and 2-Day Professional Certification programs, recognized across the U.S., Canada, and Africa.' },
 ]
 
 const GALLERY = [
@@ -129,7 +142,7 @@ export default function Home() {
 
   const setField = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
 
-  const submitConnect = (e) => {
+  const submitConnect = async (e) => {
     e.preventDefault()
     const name = form.name.trim()
     const email = form.email.trim()
@@ -139,10 +152,37 @@ export default function Home() {
       setConnectStatus('Please add your name, email, and message.')
       return
     }
-    const subject = encodeURIComponent(`EMBACCI ${topic} Enquiry`)
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${topic}\n\n${msg}`)
-    setConnectStatus('Opening your email app…')
-    window.location.href = `mailto:hello@embacci.com?subject=${subject}&body=${body}`
+
+    // All form fields, plus the recipients, passed to the EmailJS template.
+    // Map in the template: To Email -> {{to_email}}, Cc -> {{cc_email}}.
+    const params = {
+      to_email: NOTIFY_TO,
+      cc_email: NOTIFY_CC,
+      from_name: name,
+      reply_to: email,
+      from_email: email,
+      topic,
+      subject: `EMBACCI ${topic} Enquiry from ${name}`,
+      message: msg,
+    }
+
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      // Fallback if EmailJS isn't configured yet: open the user's mail app.
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${topic}\n\n${msg}`)
+      setConnectStatus('Opening your email app…')
+      window.location.href = `mailto:${NOTIFY_EMAILS}?subject=${encodeURIComponent(params.subject)}&body=${body}`
+      return
+    }
+
+    try {
+      setConnectStatus('Sending…')
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params, { publicKey: EMAILJS_PUBLIC_KEY })
+      setConnectStatus('Thank you — your message has been sent. Our team will be in touch shortly.')
+      setForm({ name: '', email: '', topic: 'Booking', message: '' })
+    } catch (err) {
+      console.error('EmailJS send failed:', err)
+      setConnectStatus('Sorry, something went wrong. Please email us directly at africa@embacci.com.')
+    }
   }
 
   return (
@@ -165,7 +205,7 @@ export default function Home() {
             playsInline
             preload="auto"
             aria-hidden="true"
-            style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '100vw', height: '56.25vw', minHeight: '100vh', minWidth: '177.78vh', objectFit: 'cover', border: 0, pointerEvents: 'none' }}
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', border: 0, pointerEvents: 'none' }}
           >
             <source src="/assets/hero-video.mp4" type="video/mp4" />
           </video>
@@ -207,7 +247,7 @@ export default function Home() {
       </div>
 
       {/* ============ TRUST STRIP ============ */}
-      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '30px clamp(18px,5vw,60px)', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 18, borderBottom: '1px solid rgba(244,238,227,.08)' }} className="emb-g4">
+      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '30px clamp(18px,5vw,60px)', gap: 18, borderBottom: '1px solid rgba(244,238,227,.08)' }} className="emb-g4">
         {TRUST.map((t) => (
           <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'center' }}>
             <span style={{ width: 7, height: 7, background: 'var(--accent)', transform: 'rotate(45deg)', flex: 'none' }} />
@@ -217,7 +257,7 @@ export default function Home() {
       </div>
 
       {/* ============ BRAND STORY ============ */}
-      <section className="emb-g2" style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(80px,12vh,150px) clamp(18px,5vw,60px)', gridTemplateColumns: '1.05fr .95fr', gap: 'clamp(40px,6vw,90px)', alignItems: 'center' }}>
+      <section className="emb-split" style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(80px,12vh,150px) clamp(18px,5vw,60px)', gap: 'clamp(40px,6vw,90px)', alignItems: 'center' }}>
         <Reveal>
           <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 30 }}>
             <span style={{ width: 30, height: 1, background: 'var(--accent)' }} />
@@ -231,7 +271,7 @@ export default function Home() {
           </p>
           <div style={{ borderLeft: '2px solid var(--accent)', padding: '6px 0 6px 24px', maxWidth: 540 }}>
             <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(18px,1.9vw,23px)', fontStyle: 'italic', lineHeight: 1.5, color: '#E8DFD2', margin: 0 }}>
-              Our Mission is to empower beauty through culture, care, and connection — serving the African diaspora and global communities with dignity and distinction.
+              Our Mission is to empower beauty through culture, care, and connection, serving the African diaspora and global communities with dignity and distinction.
             </p>
           </div>
         </Reveal>
@@ -287,7 +327,7 @@ export default function Home() {
             </h2>
           </div>
           <p style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.7, color: 'var(--muted-4)', maxWidth: 300 }}>
-            Elegance and expertise, brought directly to your door — for every complexion, every occasion.
+            Elegance and expertise, brought directly to your door, for every complexion, every occasion.
           </p>
         </Reveal>
 
@@ -327,7 +367,7 @@ export default function Home() {
               Precision. Speed. <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Luxury.</span>
             </h2>
             <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', maxWidth: 520, margin: '0 0 30px' }}>
-              A next-generation airbrush system delivering even, weightless, camera-ready coverage that blends seamlessly into every skin tone and undertone — the future of beauty, for every complexion.
+              A next-generation airbrush system delivering even, weightless, camera-ready coverage that blends seamlessly into every skin tone and undertone. The future of beauty, for every complexion.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 28, marginBottom: 34 }}>
               <div>
@@ -398,7 +438,7 @@ export default function Home() {
               Book an Artist in <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>moments.</span>
             </h2>
             <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.7, color: '#C5BBAD', maxWidth: 520, margin: '0 auto 40px' }}>
-              Tell us the occasion — our concierge team confirms your artist with instant scheduling. No hassle, no delays.
+              Tell us the occasion, and our concierge team confirms your artist with instant scheduling. No hassle, no delays.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center', alignItems: 'center', maxWidth: 680, margin: '0 auto' }}>
               <select
@@ -453,11 +493,11 @@ export default function Home() {
               Let&apos;s <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>talk.</span>
             </h2>
             <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.7, color: 'var(--muted-3)', maxWidth: 520, margin: '0 auto' }}>
-              Bookings, partnerships, training, or press — our concierge team responds with care, around the clock.
+              Bookings, partnerships, training, or press, our concierge team responds with care, around the clock.
             </p>
           </Reveal>
 
-          <div className="emb-connect-grid" style={{ display: 'grid', gridTemplateColumns: '.85fr 1.15fr', gap: 'clamp(40px,6vw,80px)', alignItems: 'start' }}>
+          <div className="emb-connect-grid" style={{ gap: 'clamp(40px,6vw,80px)', alignItems: 'start' }}>
             <Reveal>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                 <a href="tel:+18888206671" style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '20px 0', borderBottom: '1px solid rgba(244,238,227,.1)', textDecoration: 'none' }}>
@@ -480,7 +520,7 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay=".08s" as="form" onSubmit={submitConnect} style={{ background: 'rgba(10,9,8,.5)', border: '1px solid rgba(244,238,227,.12)', padding: 'clamp(26px,3vw,44px)' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              <div className="emb-connect-form" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                 <div>
                   <label style={{ display: 'block', fontSize: 11, letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--muted-5)', marginBottom: 10 }}>Name</label>
                   <input type="text" placeholder="Full name" className="emb-input" value={form.name} onChange={setField('name')} />

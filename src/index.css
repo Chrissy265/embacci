@@ -1,5 +1,5 @@
 /* ============================================================
-   EMBACCI International — Global design system
+   EMBACCI International - Global design system
    Dark editorial fashion-house: Bodoni Moda + Jost, terracotta accent.
    Ported from the Claude Design (.dc.html) prototypes.
    ============================================================ */
@@ -24,13 +24,15 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: var(--bg); }
+html, body { margin: 0; padding: 0; background: var(--bg); width: 100%; max-width: 100%; overflow-x: hidden; }
 body {
   font-family: var(--sans);
   color: var(--text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
+/* Never let media or wide children push the page sideways on small screens */
+img, video, iframe, canvas, svg { max-width: 100%; }
 ::selection { background: var(--accent); color: var(--bg); }
 a { color: inherit; }
 img { max-width: 100%; }
@@ -57,6 +59,20 @@ button { font-family: inherit; }
 /* Makeup on Demand booking form responsive collapse */
 @media (max-width: 860px) { .emb-bookgrid { grid-template-columns: 1fr !important; } }
 @media (max-width: 560px) { .emb-form2 { grid-template-columns: 1fr !important; } }
+
+/* Custom two-column splits (hero / brand-story / connect) that must stack on mobile.
+   Defined as classes so the desktop ratio lives here and collapses via media query;
+   inline gridTemplateColumns would override the breakpoint and stay 2-col on phones. */
+.emb-split { display: grid; grid-template-columns: 1.05fr .95fr; }
+.emb-connect-grid { display: grid; grid-template-columns: .85fr 1.15fr; }
+@media (max-width: 860px) {
+  .emb-split,
+  .emb-connect-grid { grid-template-columns: 1fr; }
+}
+/* Home connect form: two inputs side-by-side, stack on small phones */
+@media (max-width: 560px) {
+  .emb-connect-form { grid-template-columns: 1fr !important; }
+}
 
 /* ---------- Gallery grid + masonry ---------- */
 .emb-gal { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 210px; gap: 14px; }

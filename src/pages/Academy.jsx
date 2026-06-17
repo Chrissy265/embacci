@@ -61,7 +61,7 @@ export default function Academy() {
               <h1 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(38px,5.2vw,84px)', lineHeight: .96, letterSpacing: '-0.012em', margin: 0, color: 'var(--text-bright)' }}>
                 Professional artistry.<br /><span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Global standards.</span>
               </h1>
-              <p style={{ maxWidth: 580, margin: '28px 0 0', fontSize: 'clamp(15px,1.3vw,18px)', fontWeight: 300, lineHeight: 1.7, color: '#CFC6B8' }}>A world-class beauty education program certifying artists in the EMBACCI Airbrush System — blending technical mastery, multicultural complexion expertise, and luxury service standards.</p>
+              <p style={{ maxWidth: 580, margin: '28px 0 0', fontSize: 'clamp(15px,1.3vw,18px)', fontWeight: 300, lineHeight: 1.7, color: '#CFC6B8' }}>A world-class beauty education program certifying artists in the EMBACCI Airbrush System, blending technical mastery, multicultural complexion expertise, and luxury service standards.</p>
               <div style={{ marginTop: 36 }}>
                 <Link to="/#connect" className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>View Training Options</Link>
               </div>
@@ -92,7 +92,7 @@ export default function Academy() {
             <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(28px,3.6vw,48px)', lineHeight: 1.08, margin: '0 0 22px', color: 'var(--text-bright)' }}>
               Whether you're starting your journey or <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>elevating your artistry.</span>
             </h2>
-            <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', margin: 0 }}>EMBACCI provides the tools to excel — preparing artists for global opportunities across weddings, media, fashion, and on-demand beauty.</p>
+            <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: 'var(--muted-3)', margin: 0 }}>EMBACCI provides the tools to excel, preparing artists for global opportunities across weddings, media, fashion, and on-demand beauty.</p>
           </Reveal>
           <Reveal style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {WHO.map((w) => <span key={w} style={whoTag}>{w}</span>)}
@@ -146,7 +146,7 @@ export default function Academy() {
           <Reveal delay=".12s" style={{ border: '1px solid rgba(244,238,227,.1)', padding: '40px 32px', display: 'flex', flexDirection: 'column' }}>
             <div style={{ fontSize: 11, letterSpacing: '.28em', textTransform: 'uppercase', color: 'var(--muted-5)', marginBottom: 18 }}>Coming Soon</div>
             <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 28, margin: '0 0 14px', color: 'var(--text-bright)' }}>Online Training</h3>
-            <p style={{ fontSize: '14.5px', fontWeight: 300, lineHeight: 1.75, color: 'var(--muted-4)', margin: '0 0 28px', flex: 1 }}>A flexible digital learning experience for artists worldwide — bringing EMBACCI's global standards to your screen.</p>
+            <p style={{ fontSize: '14.5px', fontWeight: 300, lineHeight: 1.75, color: 'var(--muted-4)', margin: '0 0 28px', flex: 1 }}>A flexible digital learning experience for artists worldwide, bringing EMBACCI's global standards to your screen.</p>
             <Link to="/#connect" className="btn-ghost" style={{ border: '1px solid rgba(244,238,227,.3)', color: 'var(--text-bright)', padding: 14, textAlign: 'center', fontSize: '11.5px', letterSpacing: '.18em', textTransform: 'uppercase', textDecoration: 'none' }}>Join Waitlist</Link>
           </Reveal>
         </div>
@@ -205,7 +205,7 @@ export default function Academy() {
       {/* CTA */}
       <section style={{ position: 'relative', background: 'linear-gradient(135deg,#1a120c,#0f0c0a)', overflow: 'hidden', borderTop: '1px solid rgba(199,122,72,.25)' }}>
         <Reveal style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(70px,11vh,130px) clamp(18px,5vw,60px)', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'clamp(22px,3vw,38px)', lineHeight: 1.4, color: 'var(--text-bright)', margin: '0 0 32px' }}>More than training — a gateway to professional excellence and a future in luxury beauty.</p>
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 'clamp(22px,3vw,38px)', lineHeight: 1.4, color: 'var(--text-bright)', margin: '0 0 32px' }}>More than training. A gateway to professional excellence and a future in luxury beauty.</p>
           <Link to="/#connect" className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 36px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Enroll Today</Link>
         </Reveal>
       </section>
