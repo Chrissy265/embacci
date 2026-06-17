@@ -66,7 +66,7 @@ export default function Academy() {
                 <Link to="/#connect" className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>View Training Options</Link>
               </div>
             </div>
-            <div style={{ position: 'relative', aspectRatio: '9/16', maxHeight: 600, width: '100%', margin: '0 auto', background: 'var(--bg)', overflow: 'hidden', border: '1px solid rgba(244,238,227,.1)' }}>
+            <div style={{ position: 'relative', aspectRatio: '9/16', maxHeight: 'min(600px,72vh)', maxWidth: '100%', width: '100%', margin: '0 auto', background: 'var(--bg)', overflow: 'hidden', border: '1px solid rgba(244,238,227,.1)' }}>
               <iframe
                 src={YT('jcU3Qt2v2bE')}
                 title="Presentation Airbrush! 2026"
@@ -169,7 +169,7 @@ export default function Academy() {
               <div style={certRow}><span style={{ color: 'var(--accent)', fontSize: 18 }}>◆</span><span style={{ fontSize: '15.5px', color: 'var(--muted-1)' }}>Priority access to EMBACCI events &amp; partnerships</span></div>
               <p style={{ fontSize: '13.5px', fontWeight: 300, lineHeight: 1.7, color: 'var(--muted-6)', margin: '26px 0 0' }}>Recognized across the U.S., Canada, and Africa.</p>
             </Reveal>
-            <Reveal style={{ position: 'relative', aspectRatio: '9/16', maxHeight: 760, background: 'var(--bg)', overflow: 'hidden', margin: '0 auto', width: '100%' }}>
+            <Reveal style={{ position: 'relative', aspectRatio: '9/16', maxHeight: 'min(760px,80vh)', maxWidth: '100%', background: 'var(--bg)', overflow: 'hidden', margin: '0 auto', width: '100%' }}>
               <iframe
                 src={YT('IRHFLhKgrzY')}
                 title="EMBACCI Airbrush Academy"

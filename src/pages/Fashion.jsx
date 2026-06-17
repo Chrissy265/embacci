@@ -177,7 +177,7 @@ export default function Fashion() {
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 34 }}>
               {SWATCHES.map((s) => (
                 <div key={s.label} style={{ textAlign: 'center' }}>
-                  <div style={{ width: 64, height: 64, background: s.color, border: '1px solid rgba(244,238,227,.15)' }} />
+                  <div style={{ width: 'clamp(48px,12vw,64px)', height: 'clamp(48px,12vw,64px)', background: s.color, border: '1px solid rgba(244,238,227,.15)' }} />
                   <div style={{ fontSize: 10, letterSpacing: '.12em', color: 'var(--muted-5)', marginTop: 8 }}>{s.label}</div>
                 </div>
               ))}

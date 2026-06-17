@@ -3,6 +3,7 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
+import { BOOK_URL, bookLinkProps } from '../config/booking.js'
 
 const eyebrow = { fontSize: '11.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#B89A82' }
 const stepCard = { border: '1px solid rgba(244,238,227,.1)', padding: '38px 32px' }
@@ -61,22 +62,14 @@ export default function MakeupOnDemand() {
   const submitBooking = () => {
     const n = name.trim()
     const o = occ.trim()
-    const d = date.trim()
-    const l = loc.trim()
-    const t = note.trim()
     if (!n || !o) {
       setStatusMsg('Please add your name and occasion to continue.')
       return
     }
-    let msg = 'Hello EMBACCI, I would like to book a makeup artist.'
-    msg += '\nName: ' + n
-    msg += '\nOccasion: ' + o
-    if (d) msg += '\nDate: ' + d
-    if (l) msg += '\nLocation: ' + l
-    if (t) msg += '\nNotes: ' + t
-    const url = 'https://wa.me/254707482502?text=' + encodeURIComponent(msg)
-    setStatusMsg('Opening WhatsApp…')
-    window.open(url, '_blank')
+    // Prefill the booker's name on the Calendly scheduling page, then open it.
+    const url = `${BOOK_URL}&name=${encodeURIComponent(n)}`
+    setStatusMsg('Opening the booking calendar…')
+    window.open(url, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -99,7 +92,7 @@ export default function MakeupOnDemand() {
           </h1>
           <p style={{ maxWidth: 560, margin: '28px 0 0', fontSize: 'clamp(15px,1.3vw,18px)', fontWeight: 300, lineHeight: 1.7, color: '#CFC6B8' }}>Available on-demand for hotels, weddings, corporate events, and high-profile occasions. Our artists bring elegance and expertise directly to your door. Book in moments.</p>
           <div style={{ marginTop: 36 }}>
-            <a href="#book" className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 34px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</a>
+            <a {...bookLinkProps} className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 34px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</a>
           </div>
         </div>
       </section>
@@ -201,7 +194,7 @@ export default function MakeupOnDemand() {
       {/* BOOKING FORM */}
       <section id="book" style={{ position: 'relative', background: 'linear-gradient(135deg,#1a120c,#0f0c0a)', borderTop: '1px solid rgba(199,122,72,.25)', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-30%', right: '-8%', width: 520, height: 520, background: 'radial-gradient(circle, rgba(199,122,72,.16), transparent 65%)' }} />
-        <div className="emb-bookgrid" style={{ position: 'relative', maxWidth: 1240, margin: '0 auto', padding: 'clamp(64px,9vh,120px) clamp(18px,5vw,60px)', display: 'grid', gridTemplateColumns: '.85fr 1.15fr', gap: 'clamp(40px,6vw,80px)', alignItems: 'center' }}>
+        <div className="emb-bookgrid" style={{ position: 'relative', maxWidth: 1240, margin: '0 auto', padding: 'clamp(64px,9vh,120px) clamp(18px,5vw,60px)', gap: 'clamp(40px,6vw,80px)', alignItems: 'center' }}>
           <Reveal>
             <div style={{ fontSize: '11.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#C99A78', marginBottom: 20 }}>Request a Booking</div>
             <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(30px,4.4vw,58px)', lineHeight: 1.0, margin: '0 0 22px', color: 'var(--text-bright)' }}>
@@ -214,7 +207,7 @@ export default function MakeupOnDemand() {
             </div>
           </Reveal>
           <Reveal delay=".08s" style={{ background: 'rgba(10,9,8,.5)', border: '1px solid rgba(244,238,227,.12)', padding: 'clamp(26px,3vw,44px)' }}>
-            <div className="emb-form2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div className="emb-form2" style={{ gap: 16 }}>
               <div style={{ gridColumn: 'span 2' }}>
                 <label style={fieldLabel}>Your Name</label>
                 <input className="emb-input" type="text" placeholder="Full name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -244,7 +237,7 @@ export default function MakeupOnDemand() {
                 <input className="emb-input" type="text" placeholder="Group size, style, timing…" value={note} onChange={(e) => setNote(e.target.value)} />
               </div>
             </div>
-            <button onClick={submitBooking} className="btn-primary" style={{ marginTop: 22, width: '100%', background: 'var(--accent)', color: 'var(--bg)', padding: 18, border: 'none', fontFamily: 'var(--sans)', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, cursor: 'pointer' }}>Request Booking via WhatsApp</button>
+            <button onClick={submitBooking} className="btn-primary" style={{ marginTop: 22, width: '100%', background: 'var(--accent)', color: 'var(--bg)', padding: 18, border: 'none', fontFamily: 'var(--sans)', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, cursor: 'pointer' }}>Book a Call</button>
             <div style={{ fontSize: 12, color: 'var(--muted-6)', marginTop: 14, textAlign: 'center' }}>{statusMsg}</div>
           </Reveal>
         </div>

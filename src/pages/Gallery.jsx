@@ -5,6 +5,7 @@ import Footer from '../components/Footer.jsx'
 import Lightbox from '../components/Lightbox.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
+import { bookLinkProps } from '../config/booking.js'
 
 const MEDIA = [
   ['family', 'The EMBACCI Family · Nairobi'],
@@ -200,7 +201,7 @@ export default function Gallery() {
             Be part of the <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>story.</span>
           </h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
-            <Link to="/makeup-on-demand" className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 34px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</Link>
+            <a {...bookLinkProps} className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 34px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</a>
             <Link to="/#connect" className="btn-ghost" style={{ border: '1px solid rgba(244,238,227,.32)', color: 'var(--text-bright)', padding: '17px 34px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none' }}>Get in Touch</Link>
           </div>
         </Reveal>

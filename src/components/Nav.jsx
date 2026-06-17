@@ -1,13 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { bookLinkProps } from '../config/booking.js'
 
 const SERVICES = ['makeup', 'skincare', 'academy']
 
 export default function Nav({ active = '' }) {
+  // Initialize from the real viewport so the first paint is already correct
+  // (avoids a flash of the desktop nav / overflow on phones).
+  const initialW = typeof window !== 'undefined' ? window.innerWidth : 1280
   const [menuOpen, setMenuOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
-  const [small, setSmall] = useState(false)
-  const [showBook, setShowBook] = useState(true)
+  const [small, setSmall] = useState(initialW < 1040)
+  const [showBook, setShowBook] = useState(initialW >= 520)
   const [scrolled, setScrolled] = useState(false)
   const servicesWrap = useRef(null)
 
@@ -104,7 +108,7 @@ export default function Nav({ active = '' }) {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
             {showBook && (
-              <Link to="/makeup-on-demand" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'var(--accent)', color: 'var(--bg)', padding: '13px 24px', fontSize: '11.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book Now</Link>
+              <a {...bookLinkProps} className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'var(--accent)', color: 'var(--bg)', padding: '13px 24px', fontSize: '11.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book Now</a>
             )}
             {small && (
               <button onClick={() => setMenuOpen(true)} aria-label="Menu" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 5, background: 'none', border: 'none', cursor: 'pointer', width: 44, height: 44, padding: 0 }}>
@@ -139,7 +143,7 @@ export default function Nav({ active = '' }) {
               <Link key={to} to={to} style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(22px,6vw,30px)', textDecoration: 'none', color: 'var(--text)', padding: '9px 0', borderBottom: '1px solid rgba(244,238,227,.08)' }}>{label}</Link>
             ))}
           </nav>
-          <Link to="/makeup-on-demand" onClick={() => setMenuOpen(false)} style={{ marginTop: 28, textAlign: 'center', background: 'var(--accent)', color: 'var(--bg)', padding: 18, fontSize: 13, letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</Link>
+          <a {...bookLinkProps} onClick={() => setMenuOpen(false)} style={{ marginTop: 28, textAlign: 'center', background: 'var(--accent)', color: 'var(--bg)', padding: 18, fontSize: 13, letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</a>
         </div>
       )}
     </div>

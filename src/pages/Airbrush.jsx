@@ -3,6 +3,7 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
+import { bookLinkProps } from '../config/booking.js'
 
 const eyebrow = { fontSize: '11.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#B89A82' }
 const statCell = { padding: '36px 12px', textAlign: 'center' }
@@ -57,7 +58,7 @@ export default function Airbrush() {
             </h1>
             <p style={{ maxWidth: 520, margin: '28px 0 0', fontSize: 'clamp(15px,1.3vw,18px)', fontWeight: 300, lineHeight: 1.7, color: '#CFC6B8' }}>A next-generation beauty system for flawless, hygienic, and long-lasting makeup, camera-ready coverage that blends seamlessly into every skin tone and undertone. The future of beauty, for every complexion.</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 36 }}>
-              <Link to="/makeup-on-demand" className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Airbrush Artist</Link>
+              <a {...bookLinkProps} className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Airbrush Artist</a>
               <a href="#how" className="btn-ghost" style={{ border: '1px solid rgba(244,238,227,.32)', color: 'var(--text-bright)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none' }}>How It Works</a>
             </div>
           </div>
@@ -153,7 +154,7 @@ export default function Airbrush() {
       <section style={{ background: 'var(--panel)', borderTop: '1px solid rgba(244,238,227,.07)', borderBottom: '1px solid rgba(244,238,227,.07)' }}>
         <div style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(72px,11vh,140px) clamp(18px,5vw,60px)' }}>
           <div className="emb-g2" style={{ gap: 'clamp(40px,6vw,90px)', alignItems: 'start' }}>
-            <Reveal style={{ position: 'sticky', top: 130 }}>
+            <Reveal className="emb-no-sticky-mobile" style={{ position: 'sticky', top: 130 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 18 }}>
                 <span style={{ width: 30, height: 1, background: 'var(--accent)' }} />
                 <span style={eyebrow}>Why EMBACCI Leads</span>
@@ -206,7 +207,7 @@ export default function Airbrush() {
             <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.7, color: '#C5BBAD', maxWidth: 480, margin: 0 }}>Book an airbrush artist for your wedding, event, or shoot, or get certified through our Training Academy.</p>
           </Reveal>
           <Reveal style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'flex-end' }}>
-            <Link to="/makeup-on-demand" className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</Link>
+            <a {...bookLinkProps} className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</a>
             <Link to="/academy" className="btn-ghost" style={{ border: '1px solid rgba(244,238,227,.32)', color: 'var(--text-bright)', padding: '17px 32px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none' }}>Training Academy</Link>
           </Reveal>
         </div>

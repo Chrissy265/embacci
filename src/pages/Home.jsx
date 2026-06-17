@@ -7,6 +7,7 @@ import Lightbox from '../components/Lightbox.jsx'
 import Marquee from '../components/Marquee.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
+import { bookLinkProps } from '../config/booking.js'
 
 // EmailJS config — set these in a .env file (see .env.example). Notification
 // emails for the "Let's Talk" form are sent to both EMBACCI inboxes below.
@@ -227,7 +228,7 @@ export default function Home() {
               A five-star beauty concierge brand, delivering premium on-demand makeup &amp; styling to elite hotels, weddings, and events across East Africa and the United States.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 38 }}>
-              <a href="#book" className="btn-primary" style={primaryBtn}>Book an Artist <span style={{ fontSize: 16 }}>&#8594;</span></a>
+              <a {...bookLinkProps} className="btn-primary" style={primaryBtn}>Book an Artist <span style={{ fontSize: 16 }}>&#8594;</span></a>
               <a href="#services" className="btn-ghost" style={{ ...ghostBtn, fontWeight: 500 }}>Explore the Brand</a>
             </div>
           </Reveal>
@@ -278,7 +279,7 @@ export default function Home() {
         <Reveal style={{ position: 'relative' }}>
           <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--panel-3)' }}>
             <div ref={parallaxRef} style={{ willChange: 'transform' }}>
-              <img src="/assets/founders.jpg" alt="EMBACCI International" style={{ width: '100%', height: 'clamp(420px,56vh,620px)', objectFit: 'cover', display: 'block' }} />
+              <img src="/assets/founders.jpg" alt="EMBACCI International" style={{ width: '100%', height: 'clamp(340px,48vh,620px)', objectFit: 'cover', display: 'block' }} />
             </div>
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 55%, rgba(10,9,8,.7))' }} />
             <div style={{ position: 'absolute', left: 24, bottom: 22, right: 24 }}>
@@ -293,7 +294,7 @@ export default function Home() {
       {/* ============ GLOBAL VISION ============ */}
       <section style={{ position: 'relative', background: 'var(--panel)', borderTop: '1px solid rgba(244,238,227,.07)', borderBottom: '1px solid rgba(244,238,227,.07)' }}>
         <div style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(70px,11vh,130px) clamp(18px,5vw,60px)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: 'clamp(36px,6vw,90px)', alignItems: 'start' }}>
+          <div className="emb-vision-grid" style={{ gap: 'clamp(36px,6vw,90px)', alignItems: 'start' }}>
             <Reveal>
               <div style={{ fontSize: '11.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#B89A82', marginBottom: 18 }}>The Rollout</div>
               <div style={{ fontFamily: 'var(--serif)', fontWeight: 600, fontSize: 'clamp(72px,12vw,168px)', lineHeight: .86, letterSpacing: '-0.02em', color: 'var(--accent)' }}>2026</div>
@@ -446,7 +447,7 @@ export default function Home() {
                 onChange={(e) => setOccasion(e.target.value)}
                 aria-label="Occasion type"
                 className="emb-input"
-                style={{ letterSpacing: '.04em', fontSize: '14.5px', minWidth: 260, width: 'auto', padding: '18px 46px 18px 22px' }}
+                style={{ letterSpacing: '.04em', fontSize: '14.5px', minWidth: 'min(260px, 100%)', width: 'auto', maxWidth: '100%', flex: '1 1 240px', padding: '18px 46px 18px 22px' }}
               >
                 <option value="">Select occasion type</option>
                 <option value="Wedding">Wedding</option>
@@ -455,7 +456,7 @@ export default function Home() {
                 <option value="Casual">Casual</option>
                 <option value="Other">Other</option>
               </select>
-              <Link to="/makeup-on-demand" className="btn-primary" style={{ ...primaryBtn, padding: '18px 38px', fontWeight: 600 }}>Book Now <span style={{ fontSize: 16 }}>&#8594;</span></Link>
+              <a {...bookLinkProps} className="btn-primary" style={{ ...primaryBtn, padding: '18px 38px', fontWeight: 600 }}>Book Now <span style={{ fontSize: 16 }}>&#8594;</span></a>
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 26px', justifyContent: 'center', marginTop: 30, fontSize: '12.5px', letterSpacing: '.06em', color: 'var(--muted-4)' }}>
               <span>or reach our concierge directly</span>
@@ -468,7 +469,7 @@ export default function Home() {
 
       {/* ============ JOIN TEAM ============ */}
       <section style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(72px,11vh,130px) clamp(18px,5vw,60px)' }}>
-        <Reveal style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 40, alignItems: 'center', border: '1px solid rgba(244,238,227,.1)', padding: 'clamp(34px,5vw,64px)' }}>
+        <Reveal className="emb-banner-grid" style={{ gap: 'clamp(24px,4vw,40px)', alignItems: 'center', border: '1px solid rgba(244,238,227,.1)', padding: 'clamp(34px,5vw,64px)' }}>
           <div>
             <div style={{ fontSize: '11.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#B89A82', marginBottom: 20 }}>Join Our Team</div>
             <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(26px,3.6vw,48px)', lineHeight: 1.08, margin: 0, color: 'var(--text-bright)', maxWidth: 680 }}>

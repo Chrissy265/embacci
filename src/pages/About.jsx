@@ -4,6 +4,7 @@ import Footer from '../components/Footer.jsx'
 import VideoEmbed from '../components/VideoEmbed.jsx'
 import Reveal from '../components/Reveal.jsx'
 import useReveal from '../hooks/useReveal.js'
+import { bookLinkProps } from '../config/booking.js'
 
 const chip = { border: '1px solid rgba(244,238,227,.16)', padding: '11px 18px', fontSize: 13, color: '#D8CFC2' }
 const chipCaps = { border: '1px solid rgba(244,238,227,.16)', padding: '11px 20px', fontSize: '11.5px', letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--muted-1)' }
@@ -134,7 +135,7 @@ export default function About() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(40px,5vh,60px)', marginTop: 'clamp(40px,6vh,70px)' }}>
 
             {/* 01 */}
-            <Reveal style={{ display: 'grid', gridTemplateColumns: '96px 1fr', gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
+            <Reveal className="emb-history-row" style={{ gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
               <div style={historyNum}>01</div>
               <div>
                 <h3 style={historyH3}>Our Beginning</h3>
@@ -145,7 +146,7 @@ export default function About() {
             </Reveal>
 
             {/* 02 */}
-            <Reveal style={{ display: 'grid', gridTemplateColumns: '96px 1fr', gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
+            <Reveal className="emb-history-row" style={{ gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
               <div style={historyNum}>02</div>
               <div>
                 <h3 style={historyH3}>Our Evolution</h3>
@@ -163,7 +164,7 @@ export default function About() {
             </Reveal>
 
             {/* 03 */}
-            <Reveal style={{ display: 'grid', gridTemplateColumns: '96px 1fr', gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
+            <Reveal className="emb-history-row" style={{ gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
               <div style={historyNum}>03</div>
               <div>
                 <h3 style={historyH3}>Our East Africa Expansion</h3>
@@ -180,7 +181,7 @@ export default function About() {
             </Reveal>
 
             {/* 04 */}
-            <Reveal style={{ display: 'grid', gridTemplateColumns: '96px 1fr', gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
+            <Reveal className="emb-history-row" style={{ gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
               <div style={historyNum}>04</div>
               <div>
                 <h3 style={historyH3}>Our Mission</h3>
@@ -196,7 +197,7 @@ export default function About() {
             </Reveal>
 
             {/* 05 */}
-            <Reveal style={{ display: 'grid', gridTemplateColumns: '96px 1fr', gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
+            <Reveal className="emb-history-row" style={{ gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
               <div style={historyNum}>05</div>
               <div>
                 <h3 style={historyH3}>Our Vision</h3>
@@ -212,7 +213,7 @@ export default function About() {
             </Reveal>
 
             {/* 06 */}
-            <Reveal style={{ display: 'grid', gridTemplateColumns: '96px 1fr', gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
+            <Reveal className="emb-history-row" style={{ gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
               <div style={historyNum}>06</div>
               <div>
                 <h3 style={historyH3}>Our Leadership</h3>
@@ -229,7 +230,7 @@ export default function About() {
             </Reveal>
 
             {/* 07 */}
-            <Reveal style={{ display: 'grid', gridTemplateColumns: '96px 1fr', gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
+            <Reveal className="emb-history-row" style={{ gap: 'clamp(18px,3vw,40px)', alignItems: 'start' }}>
               <div style={historyNum}>07</div>
               <div>
                 <h3 style={historyH3}>Our Brand Today</h3>
@@ -267,7 +268,7 @@ export default function About() {
           <div className="emb-g3" style={{ gap: 'clamp(40px,5vw,72px)', maxWidth: 1100, margin: '0 auto' }}>
             {TEAM.map((m) => (
               <Reveal key={m.name} delay={m.delay} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                <div style={{ position: 'relative', width: 'clamp(190px,20vw,236px)', aspectRatio: '1/1', marginBottom: 30 }}>
+                <div style={{ position: 'relative', width: 'clamp(150px,42vw,236px)', aspectRatio: '1/1', marginBottom: 30 }}>
                   <div style={{ position: 'absolute', inset: -12, border: '1px solid rgba(199,122,72,.4)', borderRadius: '50%' }} />
                   <div style={{ width: '100%', height: '100%', borderRadius: '50%', overflow: 'hidden', background: 'var(--panel-3)' }}>
                     <img src={`/assets/${m.img}.png`} alt={m.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: m.pos || undefined, display: 'block' }} />
@@ -406,7 +407,7 @@ export default function About() {
             Experience beauty, <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>on demand.</span>
           </h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
-            <Link to="/makeup-on-demand" className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 34px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</Link>
+            <a {...bookLinkProps} className="btn-primary" style={{ background: 'var(--accent)', color: 'var(--bg)', padding: '17px 34px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>Book an Artist</a>
             <Link to="/#connect" className="btn-ghost" style={{ border: '1px solid rgba(244,238,227,.32)', color: 'var(--text-bright)', padding: '17px 34px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none' }}>Contact Us</Link>
           </div>
         </Reveal>

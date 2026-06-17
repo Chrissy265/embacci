@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const linkStyle = { textDecoration: 'none', color: 'var(--muted-2)' }
@@ -6,18 +5,10 @@ const headStyle = { fontSize: 11, letterSpacing: '.28em', textTransform: 'upperc
 const colStyle = { display: 'flex', flexDirection: 'column', gap: 13, fontSize: 14, color: 'var(--muted-2)' }
 
 export default function Footer() {
-  const [narrow, setNarrow] = useState(false)
-  useEffect(() => {
-    const apply = () => setNarrow(window.innerWidth < 760)
-    apply()
-    window.addEventListener('resize', apply)
-    return () => window.removeEventListener('resize', apply)
-  }, [])
-
   return (
     <div style={{ fontFamily: 'var(--sans)', background: 'var(--bg)', borderTop: '1px solid rgba(244,238,227,.08)', padding: 'clamp(56px,8vh,90px) clamp(18px,5vw,60px) 36px' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: narrow ? '1fr 1fr' : '1.4fr 1fr 1fr 1fr', gap: 40, paddingBottom: 50, borderBottom: '1px solid rgba(244,238,227,.08)' }}>
+        <div className="emb-footer-grid" style={{ gap: 40, paddingBottom: 50, borderBottom: '1px solid rgba(244,238,227,.08)' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
               <img src="/assets/logo-mark.png" alt="EMBACCI" style={{ height: 42, width: 'auto', display: 'block', flex: 'none' }} />
