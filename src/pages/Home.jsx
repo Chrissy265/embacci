@@ -37,6 +37,7 @@ const SERVICES = [
     to: '/makeup-on-demand',
     num: '01',
     img: '/assets/media/setting-spray.jpg',
+    pos: '50% 35%',
     title: 'Concierge Makeup Services',
     body: 'Available on-demand for hotels, weddings, corporate events, and high-profile occasions. Our artists bring elegance and expertise directly to your door.',
     cta: 'Book Now',
@@ -46,6 +47,7 @@ const SERVICES = [
     to: '/skincare',
     num: '02',
     img: '/assets/media/product-salon.jpg',
+    pos: '50% 22%',
     title: 'Organic Skincare from Ethiopia',
     body: 'Featuring our exclusive Gob Tree collection, an ancient botanical treasure known for its healing, hydrating, and rejuvenating properties. Sourced ethically and crafted for radiant skin.',
     cta: 'Shop Skincare',
@@ -55,6 +57,7 @@ const SERVICES = [
     to: '/makeup-on-demand',
     num: '03',
     img: '/assets/media/duo-salon.jpg',
+    pos: '50% 18%',
     title: 'Styling & Beauty Enhancements',
     body: 'From skincare consultations to personalized styling, our concierge offerings are tailored to elevate your natural beauty with grace and precision.',
     cta: 'Explore Services',
@@ -89,7 +92,6 @@ export default function Home() {
   const [faqOpen, setFaqOpen] = useState(-1)
   const [connectStatus, setConnectStatus] = useState('')
   const [form, setForm] = useState({ name: '', email: '', topic: 'Booking', message: '' })
-  const parallaxRef = useRef(null)
   const heroVideoRef = useRef(null)
 
   useReveal()
@@ -116,21 +118,6 @@ export default function Home() {
       v.removeEventListener('canplay', onLoaded)
       v.removeEventListener('timeupdate', onTimeUpdate)
     }
-  }, [])
-
-  // Lightweight parallax on the brand-story image
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const onScroll = () => {
-      const el = parallaxRef.current
-      if (!el) return
-      const rect = el.getBoundingClientRect()
-      const off = rect.top + rect.height / 2 - window.innerHeight / 2
-      el.style.transform = `translate3d(0,${off * -0.06}px,0)`
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
-    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const openTile = (src, cap) => {
@@ -277,12 +264,9 @@ export default function Home() {
           </div>
         </Reveal>
         <Reveal style={{ position: 'relative' }}>
-          <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--panel-3)' }}>
-            <div ref={parallaxRef} style={{ willChange: 'transform' }}>
-              <img src="/assets/founders.jpg" alt="EMBACCI International" style={{ width: '100%', height: 'clamp(340px,48vh,620px)', objectFit: 'cover', display: 'block' }} />
-            </div>
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 55%, rgba(10,9,8,.7))' }} />
-            <div style={{ position: 'absolute', left: 24, bottom: 22, right: 24 }}>
+          <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--panel-3)', border: '1px solid rgba(244,238,227,.08)' }}>
+            <img src="/assets/who-we-are.jpg" alt="EMBACCI International founders in traditional Ethiopian attire" style={{ width: '100%', height: 'auto', maxHeight: 'clamp(420px,80vh,760px)', objectFit: 'contain', display: 'block', margin: '0 auto' }} />
+            <div style={{ position: 'absolute', left: 24, bottom: 22, right: 24, textShadow: '0 2px 12px rgba(0,0,0,.7)' }}>
               <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 18, color: 'var(--text-bright)' }}>Born in Addis Ababa</div>
               <div style={{ fontSize: '10.5px', letterSpacing: '.3em', textTransform: 'uppercase', color: '#C9B7A6', marginTop: 6 }}>Heritage &amp; Vision</div>
             </div>
@@ -335,8 +319,8 @@ export default function Home() {
         <div className="emb-g3" style={{ gap: 24 }}>
           {SERVICES.map((s) => (
             <Reveal key={s.num} as={Link} to={s.to} delay={s.delay} className="hover-card" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', background: 'var(--panel-2)', border: '1px solid rgba(244,238,227,.08)' }}>
-              <div className="hover-scale" style={{ position: 'relative', height: 300, overflow: 'hidden' }}>
-                <img src={s.img} alt={s.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <div className="hover-scale" style={{ position: 'relative', height: 340, overflow: 'hidden' }}>
+                <img src={s.img} alt={s.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: s.pos || 'center', display: 'block' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(10,9,8,.15) 0%,rgba(10,9,8,.55) 100%)' }} />
                 <div style={{ position: 'absolute', top: 18, left: 18, fontFamily: 'var(--serif)', fontSize: 20, color: 'var(--accent)' }}>{s.num}</div>
               </div>
