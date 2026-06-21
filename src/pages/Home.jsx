@@ -335,6 +335,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ============ BECOME AN AMBASSADOR ============ */}
+      <section style={{ position: 'relative', background: 'linear-gradient(135deg,#1a120c,#0f0c0a)', borderTop: '1px solid rgba(199,122,72,.25)', borderBottom: '1px solid rgba(199,122,72,.25)', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '-30%', left: '-8%', width: 520, height: 520, background: 'radial-gradient(circle, rgba(199,122,72,.16), transparent 65%)', pointerEvents: 'none' }} />
+        <Reveal style={{ position: 'relative', maxWidth: 1000, margin: '0 auto', padding: 'clamp(72px,11vh,130px) clamp(18px,5vw,60px)', textAlign: 'center' }}>
+          <div style={{ fontSize: '11.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#C99A78', marginBottom: 22 }}>Join Our Team</div>
+          <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(30px,4.6vw,64px)', lineHeight: 1.04, margin: '0 0 22px', color: 'var(--text-bright)' }}>
+            Become an EMBACCI <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Ambassador.</span>
+          </h2>
+          <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.8, color: '#C5BBAD', maxWidth: 620, margin: '0 auto 40px' }}>
+            Are you a talented makeup artist ready to work with a global luxury brand? Join a prestigious network of beauty professionals shaping the future of premium concierge services.
+          </p>
+          <Link to="/become-an-ambassador" className="btn-primary" style={{ ...primaryBtn, padding: '18px 38px', fontWeight: 600 }}>Become an Ambassador <span style={{ fontSize: 16 }}>&#8594;</span></Link>
+        </Reveal>
+      </section>
+
       {/* ============ AIRBRUSH FEATURE ============ */}
       <section style={{ position: 'relative', background: 'var(--panel)', borderTop: '1px solid rgba(244,238,227,.07)', borderBottom: '1px solid rgba(244,238,227,.07)' }}>
         <div className="emb-g2" style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(72px,11vh,140px) clamp(18px,5vw,60px)', gap: 'clamp(36px,6vw,84px)', alignItems: 'center' }}>
@@ -450,19 +465,6 @@ export default function Home() {
             </div>
           </Reveal>
         </div>
-      </section>
-
-      {/* ============ JOIN TEAM ============ */}
-      <section style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(72px,11vh,130px) clamp(18px,5vw,60px)' }}>
-        <Reveal className="emb-banner-grid" style={{ gap: 'clamp(24px,4vw,40px)', alignItems: 'center', border: '1px solid rgba(244,238,227,.1)', padding: 'clamp(34px,5vw,64px)' }}>
-          <div>
-            <div style={{ fontSize: '11.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#B89A82', marginBottom: 20 }}>Join Our Team</div>
-            <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(26px,3.6vw,48px)', lineHeight: 1.08, margin: 0, color: 'var(--text-bright)', maxWidth: 680 }}>
-              Are you a talented makeup artist ready to work with a <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>global brand?</span>
-            </h2>
-          </div>
-          <a href="#connect" className="btn-primary" style={{ ...primaryBtn, padding: '18px 36px', whiteSpace: 'nowrap' }}>Become an Ambassador <span style={{ fontSize: 16 }}>&#8594;</span></a>
-        </Reveal>
       </section>
 
       {/* ============ CONNECT: FORM + FAQ ============ */}

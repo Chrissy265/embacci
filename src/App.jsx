@@ -9,6 +9,7 @@ import Skincare from './pages/Skincare.jsx'
 import Airbrush from './pages/Airbrush.jsx'
 import Academy from './pages/Academy.jsx'
 import MakeupOnDemand from './pages/MakeupOnDemand.jsx'
+import Ambassador from './pages/Ambassador.jsx'
 
 // Scroll to top on route change, or to a hash anchor if present.
 function ScrollManager() {
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="/airbrush" element={<Airbrush />} />
         <Route path="/academy" element={<Academy />} />
         <Route path="/makeup-on-demand" element={<MakeupOnDemand />} />
+        <Route path="/become-an-ambassador" element={<Ambassador />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </>

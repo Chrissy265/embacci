@@ -13,7 +13,12 @@ export default function Footer() {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
               <img src={asset('logo-mark.png')} alt="EMBACCI" style={{ height: 42, width: 'auto', display: 'block', flex: 'none' }} />
-              <div style={{ fontFamily: 'var(--serif)', fontSize: 18, letterSpacing: '.32em', fontWeight: 600, color: 'var(--text)' }}>EMBACCI</div>
+              <div style={{ lineHeight: 1 }}>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 18, letterSpacing: '.32em', fontWeight: 600, color: 'var(--text)' }}>EMBACCI</div>
+                <div style={{ fontSize: 8, letterSpacing: '.5em', color: 'var(--muted-5)', marginTop: 5, paddingLeft: 2 }}>INTERNATIONAL</div>
+                <div style={{ fontSize: 17, fontWeight: 800, color: 'var(--text)', marginTop: 6, lineHeight: 1.15 }}>እምባቺ ኢንተርናሽናል</div>
+                <div dir="rtl" style={{ fontSize: 17, fontWeight: 800, color: 'var(--text)', marginTop: 3, lineHeight: 1.15 }}>إمباتشي إنترناشيونال</div>
+              </div>
             </div>
             <p style={{ fontSize: 14, fontWeight: 300, lineHeight: 1.8, color: 'var(--muted-4)', maxWidth: 300, margin: '0 0 20px' }}>
               Luxury beauty, global identity, on-demand excellence. Born in Ethiopia, serving the African diaspora and the world.

@@ -105,10 +105,9 @@ export default function About() {
             <p style={{ ...historyP, margin: 0 }}>Rooted in Ethiopian heritage and built for a global stage, we celebrate beauty in every complexion, honoring culture, craftsmanship, and the modern woman.</p>
           </Reveal>
           <Reveal style={{ position: 'relative' }}>
-            <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--panel-3)' }}>
-              <img src={asset('founders.jpg')} alt="EMBACCI International" style={{ width: '100%', height: 'clamp(420px,56vh,600px)', objectFit: 'cover', display: 'block' }} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,transparent 55%,rgba(10,9,8,.66))' }} />
-              <div style={{ position: 'absolute', left: 24, bottom: 22 }}>
+            <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--panel-3)', border: '1px solid rgba(244,238,227,.08)' }}>
+              <img src={asset('who-we-are.jpg')} alt="EMBACCI International founders in traditional Ethiopian attire" style={{ width: '100%', height: 'auto', maxHeight: 'clamp(420px,80vh,760px)', objectFit: 'contain', display: 'block', margin: '0 auto' }} />
+              <div style={{ position: 'absolute', left: 24, bottom: 22, right: 24, textShadow: '0 2px 12px rgba(0,0,0,.7)' }}>
                 <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 18, color: 'var(--text-bright)' }}>Born in Addis Ababa</div>
                 <div style={{ fontSize: '10.5px', letterSpacing: '.3em', textTransform: 'uppercase', color: '#C9B7A6', marginTop: 6 }}>Heritage &amp; Vision</div>
               </div>

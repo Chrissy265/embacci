@@ -147,6 +147,29 @@ export default function Skincare() {
         </div>
       </section>
 
+      {/* PURCHASE GOB TREE SKINCARE */}
+      <section style={{ position: 'relative', background: 'linear-gradient(135deg,#16170f,#0f0c0a)', overflow: 'hidden', borderTop: '1px solid rgba(199,122,72,.25)', borderBottom: '1px solid rgba(199,122,72,.25)' }}>
+        <div style={{ position: 'absolute', top: '-30%', right: '-8%', width: 520, height: 520, background: 'radial-gradient(circle, rgba(199,122,72,.16), transparent 65%)', pointerEvents: 'none' }} />
+        <Reveal style={{ position: 'relative', maxWidth: 900, margin: '0 auto', padding: 'clamp(72px,11vh,130px) clamp(18px,5vw,60px)', textAlign: 'center' }}>
+          <div style={{ ...eyebrow, color: '#C99A78', marginBottom: 22 }}>Shop the Collection</div>
+          <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(30px,4.4vw,58px)', lineHeight: 1.04, margin: '0 0 22px', color: 'var(--text-bright)' }}>
+            Bring Gob Tree home, <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>today.</span>
+          </h2>
+          <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.8, color: '#C5BBAD', maxWidth: 560, margin: '0 auto 40px' }}>
+            Experience the healing, hydrating, and rejuvenating power of our organic Ethiopian skincare. Secure checkout, delivered to your door.
+          </p>
+          <a
+            href="https://checkout.square.site/merchant/MLA4TZ13WVWSS/checkout/XTYQMDCUEUY7K4GNOUOAUUXC?src=sheet"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 12, background: 'var(--accent)', color: 'var(--bg)', padding: '18px 40px', fontSize: '12.5px', letterSpacing: '.18em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}
+          >
+            Purchase Gob Tree Skincare <span style={{ fontSize: 16 }}>&#8594;</span>
+          </a>
+        </Reveal>
+      </section>
+
       {/* SKINCARE TREATMENT SERVICES */}
       <section style={{ background: 'var(--panel)', borderTop: '1px solid rgba(244,238,227,.07)' }}>
         <div style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(72px,11vh,140px) clamp(18px,5vw,60px)' }}>
