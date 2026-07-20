@@ -92,7 +92,7 @@ export default function About() {
 
       {/* WHO WE ARE */}
       <section style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(72px,11vh,140px) clamp(18px,5vw,60px)' }}>
-        <div className="emb-g2" style={{ gap: 'clamp(40px,6vw,90px)', alignItems: 'center' }}>
+        <div>
           <Reveal>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 28 }}>
               <span style={{ width: 30, height: 1, background: 'var(--accent)' }} />
@@ -103,16 +103,6 @@ export default function About() {
             </h2>
             <p style={{ ...historyP, margin: '0 0 20px' }}>EMBACCI INTERNATIONAL specializes in delivering luxurious, on-demand makeup and styling services to four- and five-star hotels, elite events, weddings, conferences, and private gatherings. We bring elegance and expertise directly to your door.</p>
             <p style={{ ...historyP, margin: 0 }}>Rooted in Ethiopian heritage and built for a global stage, we celebrate beauty in every complexion, honoring culture, craftsmanship, and the modern woman.</p>
-          </Reveal>
-          <Reveal style={{ position: 'relative' }}>
-            <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--panel-3)', border: '1px solid rgba(244,238,227,.08)' }}>
-              <img src={asset('who-we-are.jpg')} alt="EMBACCI International founders in traditional Ethiopian attire" style={{ width: '100%', height: 'auto', maxHeight: 'clamp(420px,80vh,760px)', objectFit: 'contain', display: 'block', margin: '0 auto' }} />
-              <div style={{ position: 'absolute', left: 24, bottom: 22, right: 24, textShadow: '0 2px 12px rgba(0,0,0,.7)' }}>
-                <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 18, color: 'var(--text-bright)' }}>Born in Addis Ababa</div>
-                <div style={{ fontSize: '10.5px', letterSpacing: '.3em', textTransform: 'uppercase', color: '#C9B7A6', marginTop: 6 }}>Heritage &amp; Vision</div>
-              </div>
-            </div>
-            <div style={{ position: 'absolute', top: -22, right: -10, width: 84, height: 108, border: '1px solid rgba(199,122,72,.5)', zIndex: -1 }} />
           </Reveal>
         </div>
       </section>

@@ -246,7 +246,7 @@ export default function Home() {
       </div>
 
       {/* ============ BRAND STORY ============ */}
-      <section className="emb-split" style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(80px,12vh,150px) clamp(18px,5vw,60px)', gap: 'clamp(40px,6vw,90px)', alignItems: 'center' }}>
+      <section style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(80px,12vh,150px) clamp(18px,5vw,60px)' }}>
         <Reveal>
           <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 30 }}>
             <span style={{ width: 30, height: 1, background: 'var(--accent)' }} />
@@ -263,16 +263,6 @@ export default function Home() {
               Our Mission is to empower beauty through culture, care, and connection, serving the African diaspora and global communities with dignity and distinction.
             </p>
           </div>
-        </Reveal>
-        <Reveal style={{ position: 'relative' }}>
-          <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--panel-3)', border: '1px solid rgba(244,238,227,.08)' }}>
-            <img src={asset('who-we-are.jpg')} alt="EMBACCI International founders in traditional Ethiopian attire" style={{ width: '100%', height: 'auto', maxHeight: 'clamp(420px,80vh,760px)', objectFit: 'contain', display: 'block', margin: '0 auto' }} />
-            <div style={{ position: 'absolute', left: 24, bottom: 22, right: 24, textShadow: '0 2px 12px rgba(0,0,0,.7)' }}>
-              <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 18, color: 'var(--text-bright)' }}>Born in Addis Ababa</div>
-              <div style={{ fontSize: '10.5px', letterSpacing: '.3em', textTransform: 'uppercase', color: '#C9B7A6', marginTop: 6 }}>Heritage &amp; Vision</div>
-            </div>
-          </div>
-          <div style={{ position: 'absolute', top: -22, right: -10, width: 84, height: 108, border: '1px solid rgba(199,122,72,.5)', zIndex: -1 }} />
         </Reveal>
       </section>
 
