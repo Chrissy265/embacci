@@ -179,7 +179,7 @@ export default function Home() {
       <Nav active="home" />
 
       {/* ============ HERO ============ */}
-      <section style={{ position: 'relative', height: '100vh', minHeight: 600, width: '100%', overflow: 'hidden', display: 'flex', alignItems: 'flex-start' }}>
+      <section style={{ position: 'relative', height: '100vh', minHeight: 600, width: '100%', overflow: 'hidden', display: 'flex', alignItems: 'flex-end' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, background: 'var(--bg)', overflow: 'hidden' }}>
           <video
             ref={heroVideoRef}
@@ -195,9 +195,8 @@ export default function Home() {
         </div>
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(180deg, rgba(10,9,8,.62) 0%, rgba(10,9,8,.18) 32%, rgba(10,9,8,.55) 72%, #0A0908 100%)' }} />
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'radial-gradient(130% 90% at 50% 24%, transparent 38%, rgba(10,9,8,.55))' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(90deg, rgba(10,9,8,.72) 0%, rgba(10,9,8,.4) 45%, rgba(10,9,8,0) 75%)' }} />
 
-        <div style={{ position: 'relative', zIndex: 3, width: '100%', padding: 'calc(150px + 8vh) clamp(18px,5vw,60px) 0' }}>
+        <div style={{ position: 'relative', zIndex: 3, width: '100%', maxWidth: 1320, margin: '0 auto', padding: '0 clamp(18px,5vw,60px) clamp(56px,9vh,108px)' }}>
           <Reveal>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 26 }}>
               <span style={{ width: 42, height: 1, background: 'var(--accent)' }} />
