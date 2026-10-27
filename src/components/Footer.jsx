@@ -23,8 +23,8 @@ export default function Footer() {
             <p style={{ fontSize: 14, fontWeight: 300, lineHeight: 1.8, color: 'var(--muted-4)', maxWidth: 300, margin: '0 0 20px' }}>
               Luxury beauty, global identity, on-demand excellence. Born in Ethiopia, serving the African diaspora and the world.
             </p>
-            <a href="https://www.instagram.com/embacci_international" className="link-accent" style={{ fontSize: '12.5px', letterSpacing: '.1em', color: 'var(--accent)', textDecoration: 'none' }}>
-              Instagram @embacci_international
+            <a href="https://www.facebook.com/share/1DwiiFzpw4/" target="_blank" rel="noopener noreferrer" className="link-accent" style={{ fontSize: '12.5px', letterSpacing: '.1em', color: 'var(--accent)', textDecoration: 'none' }}>
+              Facebook · EMBACCI International
             </a>
           </div>
 
@@ -53,9 +53,10 @@ export default function Footer() {
             <div style={headStyle}>Connect</div>
             <div style={colStyle}>
               <a href="tel:+18888206671" className="link-muted" style={linkStyle}>888-820-6671</a>
-              <a href="tel:+254707482502" className="link-muted" style={linkStyle}>+254 707 482 502</a>
+              <a href="tel:+251973521185" className="link-muted" style={linkStyle}>East Africa +251 973 521 185</a>
+              <a href="mailto:africa@embacci.com" className="link-muted" style={linkStyle}>africa@embacci.com</a>
               <Link to="/#connect" className="link-muted" style={linkStyle}>Contact</Link>
-              <a href="https://wa.me/254707482502" className="link-muted" style={linkStyle}>WhatsApp</a>
+              <a href="https://wa.me/251900057336" className="link-muted" style={linkStyle}>WhatsApp</a>
             </div>
           </div>
         </div>
@@ -71,7 +72,7 @@ export default function Footer() {
           <div style={{ display: 'flex', gap: 24, fontSize: '11.5px', color: '#8a8174' }}>
             <a href="https://embacci.com/privacy-policy/" className="link-muted" style={{ textDecoration: 'none', color: '#8a8174' }}>Privacy Policy</a>
             <a href="https://embacci.com/privacy-policy/" className="link-muted" style={{ textDecoration: 'none', color: '#8a8174' }}>Terms</a>
-            <a href="https://embacci.com/faq/" className="link-muted" style={{ textDecoration: 'none', color: '#8a8174' }}>FAQ</a>
+            <Link to="/#faq" className="link-muted" style={{ textDecoration: 'none', color: '#8a8174' }}>FAQ</Link>
           </div>
         </div>
       </div>

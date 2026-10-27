@@ -17,39 +17,24 @@ const missionItem = { display: 'flex', gap: 16, padding: '14px 0', borderBottom:
 
 const TEAM = [
   {
-    img: 'team-marta', name: 'Marta Worku', title: 'CFO & Management Director',
-    desc: "Leading EMBACCI's Ethiopian operations, Marta brings strategic vision and a deep commitment to artistry, culture, and five-star service across East Africa.",
+    img: 'team-wongel', name: 'Wongel Wasihun', title: 'Beauty Project Director, Ethiopia',
+    desc: "Directing EMBACCI's beauty projects in Ethiopia, Wongel pairs creative direction with flawless execution, shaping signature looks and elevating every client experience.",
     delay: '0s', pos: null,
   },
   {
-    img: 'team-wongel', name: 'Wongel Wasihun', title: 'Beauty Project Director, Ethiopia',
-    desc: "Directing EMBACCI's beauty projects in Ethiopia, Wongel pairs creative direction with flawless execution, shaping signature looks and elevating every client experience.",
-    delay: '.08s', pos: null,
-  },
-  {
-    img: 'team-beena-v2', name: 'Beena Pandya', title: 'Kenya Makeup Director',
-    desc: "Heading EMBACCI's makeup artistry in Kenya, Beena blends technical mastery with an eye for timeless glamour, delivering refined, camera-ready beauty for every occasion.",
-    delay: '.16s', pos: '50% 50%',
-  },
-  {
-    img: 'team-mihret', name: 'Mihret Mengiste', title: 'Fashion Director, Ethiopia',
-    desc: "Shaping EMBACCI's fashion vision in Ethiopia, Mihret fuses contemporary style with cultural heritage, styling looks that celebrate elegance and individuality.",
-    delay: '0s', pos: '50% 22%',
-  },
-  {
-    img: 'team-mahlet', name: 'Mahlet Wolde', title: 'Co-Owner & Admin Director, Ethiopia',
+    img: 'team-mahlet', name: 'Mahlet Wolde', title: 'Executive Consultant',
     desc: "As Co-Owner and Admin Director, Mahlet steers EMBACCI's operations and governance in Ethiopia, building the structure and stability behind every flawless experience.",
     delay: '.08s', pos: '50% 22%',
   },
   {
     img: 'team-kristufar', name: 'Kristufar Tariq', title: 'Owner & Policy Coordinator, US / Ethiopia',
     desc: "As Owner and Policy Coordinator across the US and Ethiopia, Kristufar guides EMBACCI's strategy and standards, bridging two markets with vision and integrity.",
-    delay: '.16s', pos: '50% 22%',
+    delay: '0s', pos: '50% 22%',
   },
   {
     img: 'team-christina', name: 'Christina Beckford', title: 'IT Director, USA',
     desc: "Leading EMBACCI's technology in the USA, Christina builds the digital backbone behind the brand, from the booking platform to the systems that power beauty on demand.",
-    delay: '0s', pos: '50% 18%',
+    delay: '.08s', pos: '50% 18%',
   },
 ]
 
@@ -255,7 +240,7 @@ export default function About() {
             </h2>
           </Reveal>
 
-          <div className="emb-g3" style={{ gap: 'clamp(40px,5vw,72px)', maxWidth: 1100, margin: '0 auto' }}>
+          <div className="emb-g2" style={{ gap: 'clamp(40px,5vw,72px)', maxWidth: 820, margin: '0 auto' }}>
             {TEAM.map((m) => (
               <Reveal key={m.name} delay={m.delay} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                 <div style={{ position: 'relative', width: 'clamp(150px,42vw,236px)', aspectRatio: '1/1', marginBottom: 30 }}>

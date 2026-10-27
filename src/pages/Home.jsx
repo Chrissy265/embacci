@@ -181,12 +181,6 @@ export default function Home() {
       {/* ============ HERO ============ */}
       <section style={{ position: 'relative', height: '100vh', minHeight: 600, width: '100%', overflow: 'hidden', display: 'flex', alignItems: 'flex-end' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, background: 'var(--bg)', overflow: 'hidden' }}>
-          <img
-            src={asset('founders.jpg')}
-            alt=""
-            aria-hidden="true"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 30%', transformOrigin: 'center', animation: 'embZoom 26s ease-in-out infinite alternate' }}
-          />
           <video
             ref={heroVideoRef}
             autoPlay
@@ -482,13 +476,21 @@ export default function Home() {
                   <span style={{ width: 8, height: 8, background: 'var(--accent)', transform: 'rotate(45deg)', flex: 'none' }} />
                   <span><span style={{ display: 'block', fontSize: '10.5px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--muted-6)', marginBottom: 5 }}>U.S. Line</span><span style={{ fontSize: 17, color: 'var(--text-bright)' }}>888-820-6671</span></span>
                 </a>
+                <a href="tel:+251973521185" style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '20px 0', borderBottom: '1px solid rgba(244,238,227,.1)', textDecoration: 'none' }}>
+                  <span style={{ width: 8, height: 8, background: 'var(--accent)', transform: 'rotate(45deg)', flex: 'none' }} />
+                  <span><span style={{ display: 'block', fontSize: '10.5px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--muted-6)', marginBottom: 5 }}>East Africa</span><span style={{ fontSize: 17, color: 'var(--text-bright)' }}>+251 973 521 185</span></span>
+                </a>
                 <a href="https://wa.me/251900057336" style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '20px 0', borderBottom: '1px solid rgba(244,238,227,.1)', textDecoration: 'none' }}>
                   <span style={{ width: 8, height: 8, background: 'var(--accent)', transform: 'rotate(45deg)', flex: 'none' }} />
-                  <span><span style={{ display: 'block', fontSize: '10.5px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--muted-6)', marginBottom: 5 }}>East Africa / WhatsApp</span><span style={{ fontSize: 17, color: 'var(--text-bright)' }}>+251 900 057 336</span></span>
+                  <span><span style={{ display: 'block', fontSize: '10.5px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--muted-6)', marginBottom: 5 }}>WhatsApp</span><span style={{ fontSize: 17, color: 'var(--text-bright)' }}>+251 900 057 336</span></span>
                 </a>
-                <a href="https://www.instagram.com/embacci_international" style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '20px 0', borderBottom: '1px solid rgba(244,238,227,.1)', textDecoration: 'none' }}>
+                <a href="mailto:africa@embacci.com" style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '20px 0', borderBottom: '1px solid rgba(244,238,227,.1)', textDecoration: 'none' }}>
                   <span style={{ width: 8, height: 8, background: 'var(--accent)', transform: 'rotate(45deg)', flex: 'none' }} />
-                  <span><span style={{ display: 'block', fontSize: '10.5px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--muted-6)', marginBottom: 5 }}>Instagram</span><span style={{ fontSize: 17, color: 'var(--text-bright)' }}>@embacci_international</span></span>
+                  <span><span style={{ display: 'block', fontSize: '10.5px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--muted-6)', marginBottom: 5 }}>Email</span><span style={{ fontSize: 17, color: 'var(--text-bright)' }}>africa@embacci.com</span></span>
+                </a>
+                <a href="https://www.facebook.com/share/1DwiiFzpw4/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '20px 0', borderBottom: '1px solid rgba(244,238,227,.1)', textDecoration: 'none' }}>
+                  <span style={{ width: 8, height: 8, background: 'var(--accent)', transform: 'rotate(45deg)', flex: 'none' }} />
+                  <span><span style={{ display: 'block', fontSize: '10.5px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--muted-6)', marginBottom: 5 }}>Facebook</span><span style={{ fontSize: 17, color: 'var(--text-bright)' }}>EMBACCI International</span></span>
                 </a>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '20px 0' }}>
                   <span style={{ width: 8, height: 8, background: 'var(--accent)', transform: 'rotate(45deg)', flex: 'none' }} />
@@ -528,7 +530,7 @@ export default function Home() {
           </div>
 
           {/* FAQ */}
-          <div style={{ maxWidth: 920, margin: 'clamp(64px,9vh,110px) auto 0' }}>
+          <div id="faq" style={{ maxWidth: 920, margin: 'clamp(64px,9vh,110px) auto 0', scrollMarginTop: 100 }}>
             <Reveal style={{ textAlign: 'center', marginBottom: 44 }}>
               <div style={{ fontSize: '11.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#B89A82', marginBottom: 18 }}>Questions</div>
               <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 500, fontSize: 'clamp(26px,3.6vw,48px)', lineHeight: 1.04, margin: 0, color: 'var(--text-bright)' }}>

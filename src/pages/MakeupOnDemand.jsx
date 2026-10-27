@@ -203,7 +203,8 @@ export default function MakeupOnDemand() {
             </h2>
             <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.7, color: '#C5BBAD', maxWidth: 380, margin: '0 0 30px' }}>Fill in your details and we'll confirm your artist instantly via WhatsApp. No hassle, no delays.</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              <a href="https://wa.me/254707482502" className="link-accent" style={contactLink}><span style={contactDot} />WhatsApp +254 707 482 502</a>
+              <a href="https://wa.me/251900057336" className="link-accent" style={contactLink}><span style={contactDot} />WhatsApp +251 900 057 336</a>
+              <a href="tel:+251973521185" className="link-accent" style={contactLink}><span style={contactDot} />East Africa +251 973 521 185</a>
               <a href="tel:+18888206671" className="link-accent" style={contactLink}><span style={contactDot} />Call 888-820-6671</a>
             </div>
           </Reveal>
